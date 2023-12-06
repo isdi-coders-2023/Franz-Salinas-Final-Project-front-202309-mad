@@ -1,7 +1,8 @@
 {
-  "name": "202309-w6ch3-franz-salinas",
+  "name": "dream-team-app",
   "private": true,
   "version": "1.0.0",
+  "description": "franz-salinas-final-project-back-202309-mad",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -47,6 +48,8 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
+  "author": "Franz Salinas",
+  "license": "ISC",
   "prettier": {
     "singleQuote": true
   }

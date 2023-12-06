@@ -17,4 +17,15 @@ export const logginUserThunk = createAsyncThunk<
   return loginResponse;
 });
 
-export const logginWithTokenThunk = createAsyncThunk<LoginResponse>;
+export const logginWithTokenThunk = createAsyncThunk<
+  LoginResponse,
+  {
+    token: string;
+    repo: FootballerRepo;
+    storageData: StorageData<{ token: string }>;
+  }
+>('loginUserWithToken', async ({ token, repo, storageData }) => {
+  const loginResponse = await repo.loginUserWithToken(token);
+  storageData.set({ token });
+  return loginResponse;
+});
