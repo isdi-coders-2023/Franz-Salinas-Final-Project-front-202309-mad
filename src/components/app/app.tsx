@@ -3,7 +3,7 @@ import { AppRoutes } from '../app.routes/app.routes';
 export function App() {
   return (
     <>
-      <p>HOLA</p>
+      <h1>HOLA</h1>
       <AppRoutes></AppRoutes>
     </>
   );
