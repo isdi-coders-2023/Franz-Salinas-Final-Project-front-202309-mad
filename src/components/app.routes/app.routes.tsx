@@ -8,12 +8,11 @@ export const AppRoutes = () => {
     <main>
       <Suspense>
         <Routes>
-          <Route path="/login">
-            <LoginPage></LoginPage>
-          </Route>
-          <Route path="/register">
-            <RegisterPage></RegisterPage>
-          </Route>
+          <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+          <Route
+            path="/register"
+            element={<RegisterPage></RegisterPage>}
+          ></Route>
         </Routes>
       </Suspense>
     </main>

@@ -1,9 +1,10 @@
 import { AppRoutes } from '../app.routes/app.routes';
+import { Header } from '../header/header';
 
 export function App() {
   return (
     <>
-      <h1>HOLA</h1>
+      <Header></Header>
       <AppRoutes></AppRoutes>
     </>
   );

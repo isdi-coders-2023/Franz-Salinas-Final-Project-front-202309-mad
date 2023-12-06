@@ -1,3 +1,9 @@
+import { Register } from '../register/register';
+
 export const RegisterPage = () => {
-  return <></>;
+  return (
+    <>
+      <Register></Register>
+    </>
+  );
 };
