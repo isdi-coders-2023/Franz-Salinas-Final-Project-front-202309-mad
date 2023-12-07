@@ -1,5 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { useUsers } from '../../hooks/user.hooks';
+import './register.scss';
 
 export const Register = () => {
   const [hasRegister, setRegister] = useState(false);
@@ -17,7 +18,7 @@ export const Register = () => {
 
   return (
     <>
-      <h2>Register</h2>
+      <h2 className="title-register">Register</h2>
 
       {!hasRegister && (
         <form onSubmit={handleSubmit} className="register-form">
