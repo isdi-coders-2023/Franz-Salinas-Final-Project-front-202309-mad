@@ -1,0 +1,14 @@
+@import '../vars.scss';
+
+p {
+  font-family: $titleFount;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 200;
+  color: #fff;
+}
+
+.main-top-home-page-container {
+  display: flex;
+  background-color: black;
+}

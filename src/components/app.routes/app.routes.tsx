@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { LoginPage } from '../pages/login.page';
 import { RegisterPage } from '../pages/register.page';
+import { HomePage } from '../pages/home.page';
 
 export const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ export const AppRoutes = () => {
             path="/register"
             element={<RegisterPage></RegisterPage>}
           ></Route>
+          <Route path="/" element={<HomePage></HomePage>}></Route>
         </Routes>
       </Suspense>
     </main>

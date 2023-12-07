@@ -1,0 +1,37 @@
+@import '../vars.scss';
+
+header {
+  font-family: $titleFount;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 200;
+  color: #fff;
+  background-color: $headerBackGroundOne;
+}
+
+.header-main-container {
+  display: flex;
+  margin-inline: 3.5rem;
+}
+
+.header-main-container {
+  background-color: $headerBackGroundOne;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.icons-container {
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  gap: 4rem; /* Espaciado entre elementos */
+}
+
+.header-container {
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+@media screen and (max-width: 450px) {
+}

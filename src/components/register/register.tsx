@@ -41,6 +41,8 @@ export const Register = () => {
           <button type="button">Cancel</button>
         </form>
       )}
+
+      {hasRegister && <link rel="stylesheet" href="" />}
     </>
   );
 };
