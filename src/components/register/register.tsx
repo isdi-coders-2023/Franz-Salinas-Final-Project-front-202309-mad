@@ -22,6 +22,3 @@ export const Register = () => {
     </>
   );
 };
-
-teamName: string;
-styleOfPlay: string;
