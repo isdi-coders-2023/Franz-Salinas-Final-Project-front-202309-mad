@@ -34,18 +34,22 @@ p {
 }
 .image-formation-container {
   background-color: rgba(23, 21, 21, 1);
-  margin: 3rem 3rem 3rem 23rem;
+  width: 55%;
+  display: flex;
+  justify-content: center;
 }
 
 .main-botton-home-page-container {
-  display: flex;
-  justify-content: space-between;
   background-color: rgba(11, 9, 9, 1);
 }
 .card-footballer-container {
+  width: 45%;
   display: flex;
-  background-color: rgba(11, 9, 9, 1);
-  margin: 3rem 20rem 3rem 5rem;
-  justify-content: flex-end;
-  align-self: self-end;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10rem;
+}
+
+.football-field {
+  padding-block: 5rem;
 }
