@@ -10,7 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest --watchAll --coverage",
-    "test:pro": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
+    "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
     "test:coverage": "jest --watchAll --coverage",
     "prepare": "husky install",
     "sass": "sass scss:css -w --no-source-map",
