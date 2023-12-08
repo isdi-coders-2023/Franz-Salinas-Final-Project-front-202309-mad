@@ -30,9 +30,9 @@ export const Header = () => {
             {loggedUser && (
               <>
                 <p>My team</p>
-                <Link to={'/'} style={{ textDecoration: 'none' }}>
-                  <Logout></Logout>
-                </Link>
+
+                <Logout></Logout>
+
                 <div className="image-user-logged">
                   <img
                     src={makeImageUrlToProperSize(

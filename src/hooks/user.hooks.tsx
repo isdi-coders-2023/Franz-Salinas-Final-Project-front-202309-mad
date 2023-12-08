@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../store/store';
 import { FootballerRepo } from '../services/footballer.repo';
 import { StorageData } from '../services/store.data';
 import { ac } from '../slice/user.slice';
@@ -10,6 +10,7 @@ export function useUsers() {
   const dispacht = useDispatch<AppDispatch>();
   const repo = new FootballerRepo();
   const userStorageData = new StorageData<{ token: string }>('users');
+  const { loggedUser } = useSelector((state: RootState) => state.usersState);
 
   const makeLogOut = () => {
     dispacht(ac.logout());
@@ -36,5 +37,5 @@ export function useUsers() {
     }
   };
 
-  return { makeLogOut, register, login, loginWithToken };
+  return { makeLogOut, register, login, loginWithToken, loggedUser };
 }

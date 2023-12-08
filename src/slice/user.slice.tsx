@@ -39,6 +39,11 @@ const usersSlice = createSlice({
     builder.addCase(logginUserThunk.pending, (state: UserState) => {
       state.logginState = 'logged';
     });
+
+    builder.addCase(logginUserThunk.rejected, (state: UserState) => {
+      state.logginState = 'error';
+    });
+
     builder.addCase(
       logginWithTokenThunk.fulfilled,
       (state: UserState, { payload }: PayloadAction<LoginResponse>) => {
