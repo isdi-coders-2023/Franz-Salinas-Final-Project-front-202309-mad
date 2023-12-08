@@ -33,5 +33,14 @@ header {
   text-align: left; /* Alinea el texto a la izquierda */
 }
 
+.image-user-logged {
+  margin: 2.6rem 0rem 0rem 0rem;
+}
+
+.logged-user-name {
+  margin: 0rem 0rem 0rem 0rem;
+  font-size: 1.2rem;
+}
+
 @media screen and (max-width: 450px) {
 }

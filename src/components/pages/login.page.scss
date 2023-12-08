@@ -1,7 +1,23 @@
 @import '../vars.scss';
 
+.main-login-container {
+  width: 100%;
+  padding: 0rem 34rem 10rem 34rem;
+}
+
 .image-login {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
+}
+
+.title-login-page {
+  font-size: 4rem;
+  font-family: $mainFont;
+  color: #fff;
+  text-align: center;
+}
+
+.login-section {
+  background-color: $headerBackGroundOne;
 }

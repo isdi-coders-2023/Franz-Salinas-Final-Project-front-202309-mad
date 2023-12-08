@@ -6,6 +6,7 @@ import { LoginUser } from '../../models/users';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { Link } from 'react-router-dom';
+import { ButtonCancel } from '../button-cancel/button.cancel';
 
 export const Login = () => {
   const { login } = useUsers();
@@ -26,10 +27,20 @@ export const Login = () => {
       {!loggedUser && (
         <form onSubmit={handleSubmit} className="login-form">
           <label htmlFor="">Email</label>
-          <input type="text" name="email" required />
+          <input type="text" name="email" className="input-login" required />
           <label htmlFor="">Password</label>
-          <input type="password" name="password" required />
-          <button type="submit"> Login </button>
+          <input
+            type="password"
+            name="password"
+            className="input-login"
+            required
+          />
+          <div className="buttons-login-page">
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            <ButtonCancel></ButtonCancel>
+          </div>
         </form>
       )}
 

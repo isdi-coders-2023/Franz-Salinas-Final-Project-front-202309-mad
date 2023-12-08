@@ -5,6 +5,8 @@ import { Logout } from '../logout/logout';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 
+import { makeImageUrlToProperSize } from '../../services/images';
+
 export const Header = () => {
   const { loggedUser } = useSelector((state: RootState) => state.usersState);
   return (
@@ -31,6 +33,16 @@ export const Header = () => {
                 <Link to={'/'} style={{ textDecoration: 'none' }}>
                   <Logout></Logout>
                 </Link>
+                <div className="image-user-logged">
+                  <img
+                    src={makeImageUrlToProperSize(
+                      loggedUser.avatar.publicId,
+                      50
+                    )}
+                    alt=""
+                  />
+                  <p className="logged-user-name">{loggedUser.name}</p>
+                </div>
               </>
             )}
 
