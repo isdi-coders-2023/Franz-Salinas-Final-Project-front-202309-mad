@@ -27,7 +27,7 @@ export class FootballerRepo {
   async loginUser(loginUser: LoginUser): Promise<LoginResponse> {
     const loginUrl = this.userUrl + '/login';
     const response = await fetch(loginUrl, {
-      method: 'PATCH',
+      method: 'POST',
       body: JSON.stringify(loginUser),
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export class FootballerRepo {
   async loginUserWithToken(token: string): Promise<LoginResponse> {
     const loginWithTokenUrl = this.userUrl + 'login';
     const response = await fetch(loginWithTokenUrl, {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         Authorizarion: `Bearer ${token}`,
       },

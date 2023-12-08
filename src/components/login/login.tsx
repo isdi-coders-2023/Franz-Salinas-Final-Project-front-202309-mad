@@ -3,14 +3,13 @@ import { useUsers } from '../../hooks/user.hooks';
 import './login.scss';
 
 import { LoginUser } from '../../models/users';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+
 import { Link } from 'react-router-dom';
 import { ButtonCancel } from '../button-cancel/button.cancel';
 
 export const Login = () => {
-  const { login } = useUsers();
-  const { loggedUser } = useSelector((state: RootState) => state.usersState);
+  const { login, loggedUser } = useUsers();
+
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     const formElement = event.target as HTMLFormElement;
