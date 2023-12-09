@@ -21,7 +21,11 @@ export const Register = () => {
       <h2 className="title-register">Register</h2>
 
       {!hasRegister && (
-        <form onSubmit={handleSubmit} className="register-form">
+        <form
+          onSubmit={handleSubmit}
+          className="register-form"
+          aria-label="form"
+        >
           <label htmlFor="">Email</label>
           <input type="text" name="email" required />
           <label htmlFor="">Name</label>

@@ -15,7 +15,7 @@ export const Header = () => {
         <div className="header-main-container">
           <div className="header-container">
             <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <h1>Dream Team FC </h1>
+              <h1>Dream Team Hub </h1>
             </Link>
           </div>
           <div className="icons-container">

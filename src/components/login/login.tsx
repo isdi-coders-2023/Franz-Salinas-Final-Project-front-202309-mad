@@ -24,10 +24,10 @@ export const Login = () => {
   return (
     <>
       {!loggedUser && (
-        <form onSubmit={handleSubmit} className="login-form">
-          <label htmlFor="">Email</label>
+        <form onSubmit={handleSubmit} className="login-form" aria-label="form">
+          <label>Email</label>
           <input type="text" name="email" className="input-login" required />
-          <label htmlFor="">Password</label>
+          <label>Password</label>
           <input
             type="password"
             name="password"
