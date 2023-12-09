@@ -12,9 +12,6 @@ header {
 .header-main-container {
   display: flex;
   margin-inline: 3.5rem;
-}
-
-.header-main-container {
   background-color: $headerBackGroundOne;
   display: flex;
   justify-content: space-between;
@@ -42,5 +39,6 @@ header {
   font-size: 1.2rem;
 }
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
 }
+ */

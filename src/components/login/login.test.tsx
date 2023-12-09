@@ -16,13 +16,11 @@ jest.mock('../../hooks/user.hooks', () => ({
 describe('Given Login component...', () => {
   beforeEach(() => {
     render(
-      <>
-        <Router>
-          <Provider store={store}>
-            <Login></Login>
-          </Provider>
-        </Router>
-      </>
+      <Router>
+        <Provider store={store}>
+          <Login></Login>
+        </Provider>
+      </Router>
     );
   });
 

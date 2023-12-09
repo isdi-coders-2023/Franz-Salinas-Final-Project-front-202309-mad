@@ -26,22 +26,46 @@ export const Register = () => {
           className="register-form"
           aria-label="form"
         >
-          <label htmlFor="">Email</label>
-          <input type="text" name="email" required />
-          <label htmlFor="">Name</label>
-          <input type="text" name="name" />
-          <label htmlFor="">Surname</label>
-          <input type="text" name="surname" />
-          <label htmlFor="">Age</label>
-          <input type="text" name="age" />
-          <label htmlFor="">Password</label>
-          <input type="text" name="password" required />
-          <label htmlFor="">Avatar</label>
-          <input type="file" name="avatar" required />
-          <label htmlFor="">Style of Play</label>
-          <input type="text" name="style" />
-          <label htmlFor="">Team Name</label>
-          <input type="text" name="Password" />
+          <label htmlFor="">
+            Email
+            <input type="text" name="email" required />
+          </label>
+
+          <label htmlFor="">
+            Name
+            <input type="text" name="name" />
+          </label>
+
+          <label htmlFor="">
+            Surname
+            <input type="text" name="surname" />
+          </label>
+
+          <label htmlFor="">
+            Age
+            <input type="text" name="age" />
+          </label>
+
+          <label htmlFor="">
+            Password
+            <input type="text" name="password" required />
+          </label>
+
+          <label htmlFor="">
+            Avatar
+            <input type="file" name="avatar" required />
+          </label>
+
+          <label htmlFor="">
+            Style of Play
+            <input type="text" name="style" />
+          </label>
+
+          <label htmlFor="">
+            Team Name
+            <input type="text" name="Password" />
+          </label>
+
           <button type="submit">Register</button>
           <button type="button">Cancel</button>
         </form>
