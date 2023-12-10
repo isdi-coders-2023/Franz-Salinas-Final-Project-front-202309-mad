@@ -1,0 +1,11 @@
+@import '../vars.scss';
+
+footer {
+  font-family: $mainFont;
+  font-style: italic;
+  font-weight: 200;
+  color: #fff;
+  background-color: black;
+  text-align: center;
+  padding: 1.5rem 0rem 1.5rem 0rem;
+}

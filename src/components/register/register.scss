@@ -1,0 +1,13 @@
+@import '../vars.scss';
+
+.register-form {
+  font-family: $mainFont;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-register {
+  font-family: $mainFont;
+  color: #fff;
+}
