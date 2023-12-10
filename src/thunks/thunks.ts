@@ -26,6 +26,6 @@ export const logginWithTokenThunk = createAsyncThunk<
   }
 >('loginUserWithToken', async ({ token, repo, storageData }) => {
   const loginResponse = await repo.loginUserWithToken(token);
-  storageData.set({ token });
+  storageData.set({ token: loginResponse.token });
   return loginResponse;
 });
