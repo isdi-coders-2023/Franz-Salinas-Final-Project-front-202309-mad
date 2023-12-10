@@ -12,8 +12,6 @@ export const Register = () => {
     const formData = new FormData(formElement);
     register(formData);
     setRegister(true);
-
-    return;
   };
 
   return (

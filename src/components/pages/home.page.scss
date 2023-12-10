@@ -27,6 +27,7 @@ p {
 
 .main-botton-home-page-container {
   display: flex;
+  background-color: rgba(11, 9, 9, 1);
 }
 
 .top-image-container {
@@ -39,9 +40,6 @@ p {
   justify-content: center;
 }
 
-.main-botton-home-page-container {
-  background-color: rgba(11, 9, 9, 1);
-}
 .card-footballer-container {
   width: 45%;
   display: flex;

@@ -15,13 +15,11 @@ jest.mock('../../hooks/user.hooks', () => ({
 describe('Given Register component...', () => {
   beforeEach(() => {
     render(
-      <>
-        <Router>
-          <Provider store={store}>
-            <Register></Register>
-          </Provider>
-        </Router>
-      </>
+      <Router>
+        <Provider store={store}>
+          <Register></Register>
+        </Provider>
+      </Router>
     );
   });
   describe('When we the user submits the form', () => {
