@@ -2,3 +2,15 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
+@media screen and (max-width: 460px) {
+  .footballers-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .fut-player-card {
+    width: 16rem;
+    height: 18rem;
+  }
+}
