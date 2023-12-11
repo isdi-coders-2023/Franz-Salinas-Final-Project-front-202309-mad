@@ -4,6 +4,7 @@ import { LoginPage } from '../pages/login.page';
 import { RegisterPage } from '../pages/register.page';
 import { HomePage } from '../pages/home.page';
 import { MyPlayers } from '../pages/my.players';
+import { CreateFootballerPage } from '../pages/create.footballer.page';
 
 export const AppRoutes = () => {
   return (
@@ -17,6 +18,10 @@ export const AppRoutes = () => {
           ></Route>
           <Route path="/" element={<HomePage></HomePage>}></Route>
           <Route path="/myplayers" element={<MyPlayers></MyPlayers>}></Route>
+          <Route
+            path="/create-footballer"
+            element={<CreateFootballerPage></CreateFootballerPage>}
+          ></Route>
         </Routes>
       </Suspense>
     </main>
