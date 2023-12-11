@@ -1,9 +1,11 @@
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
 import usersReducer from '../slice/user.slice';
+import footballersReducer from '../slice/footballer.slice';
 
 export const store = configureStore({
   reducer: {
     usersState: usersReducer,
+    footballerState: footballersReducer,
   },
 });
 
