@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { LoginPage } from '../pages/login.page';
 import { RegisterPage } from '../pages/register.page';
 import { HomePage } from '../pages/home.page';
+import { MyPlayers } from '../my-players/my.players';
 
 export const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
             element={<RegisterPage></RegisterPage>}
           ></Route>
           <Route path="/" element={<HomePage></HomePage>}></Route>
+          <Route path="/myplayers" element={<MyPlayers></MyPlayers>}></Route>
         </Routes>
       </Suspense>
     </main>
