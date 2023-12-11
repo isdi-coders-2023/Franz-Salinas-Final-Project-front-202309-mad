@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './header.scss';
 
 import { Logout } from '../logout/logout';
@@ -8,9 +8,28 @@ import { useSelector } from 'react-redux';
 import { makeImageUrlToProperSize } from '../../services/images';
 
 export const Header = () => {
+  const location = useLocation();
+
+  const getHeaderColorClass = () => {
+    if (location.pathname === '/') {
+      return 'header-grey'; // Aplica la clase 'header-red' si está en la ruta de home
+    } else if (
+      location.pathname === '/myplayers' ||
+      location.pathname === '/login' ||
+      location.pathname === '/register'
+    ) {
+      return 'header-black'; // Aplica la clase 'header-blue' si está en la ruta de detalles
+    }
+
+    // Otras clases o rutas adicionales
+    return ''; // Clase por defecto si no coincide con ninguna ruta
+  };
+
+  const headerClasses = `header ${getHeaderColorClass()}`.trim(); // Combina clases dinámicamente
+
   const { loggedUser } = useSelector((state: RootState) => state.usersState);
   return (
-    <header>
+    <header className={headerClasses}>
       <div className="header-main-container">
         <div className="header-container">
           <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>

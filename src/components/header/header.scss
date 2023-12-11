@@ -1,5 +1,13 @@
 @import '../vars.scss';
 
+.header-grey {
+  background-color: $headerBackGroundOne;
+}
+
+.header-black {
+  background-color: black;
+}
+
 header {
   font-family: $titleFount;
   font-size: 2rem;
@@ -12,7 +20,7 @@ header {
 .header-main-container {
   display: flex;
   margin-inline: 3.5rem;
-  background-color: $headerBackGroundOne;
+
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
