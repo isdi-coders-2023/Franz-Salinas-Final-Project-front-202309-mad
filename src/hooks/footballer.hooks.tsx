@@ -10,7 +10,7 @@ export const useFootballer = () => {
   const dispacht = useDispatch<AppDispatch>();
   const repo = useMemo(() => new FootballerRepo(), []);
 
-  const { footballers } = useSelector(
+  const { footballers, footballerInitialState } = useSelector(
     (state: RootState) => state.footballerState
   );
 
@@ -30,5 +30,6 @@ export const useFootballer = () => {
     loadFootballer,
     handleDetailsPage,
     footballers,
+    footballerInitialState,
   };
 };
