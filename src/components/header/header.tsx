@@ -18,7 +18,12 @@ export const Header = () => {
           </Link>
         </div>
         <div className="icons-container">
-          <p>Players</p>
+          <Link
+            to={'/myplayers'}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <p>Players</p>
+          </Link>
 
           {!loggedUser && (
             <Link to={'/login'} style={{ textDecoration: 'none' }}>

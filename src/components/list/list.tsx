@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useFootballer } from '../../hooks/footballer.hooks';
 import { Footballer } from '../../models/footballers';
 import { Card } from '../card/card';
+import './list.scss';
 
 export const List = () => {
   const { loadFootballer, footballers, footballerInitialState } =
