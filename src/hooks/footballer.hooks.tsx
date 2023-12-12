@@ -15,11 +15,7 @@ export const useFootballer = () => {
   );
 
   const loadFootballer = useCallback(async () => {
-    try {
-      dispacht(loadFootballersThunk(repo));
-    } catch (error) {
-      console.log((error as Error).message);
-    }
+    dispacht(loadFootballersThunk(repo));
   }, [dispacht, repo]);
 
   const handleDetailsPage = async (footballer: Footballer) => {
