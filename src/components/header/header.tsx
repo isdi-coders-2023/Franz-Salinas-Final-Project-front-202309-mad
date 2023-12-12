@@ -1,35 +1,31 @@
 import { Link, useLocation } from 'react-router-dom';
 import './header.scss';
-
 import { Logout } from '../logout/logout';
-import { RootState } from '../../store/store';
-import { useSelector } from 'react-redux';
-
 import { makeImageUrlToProperSize } from '../../services/images';
+import { useUsers } from '../../hooks/user.hooks';
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const getHeaderColorClass = (pathname: string) => {
+  if (pathname === '/') {
+    return 'header-grey';
+  } else if (
+    pathname === '/myplayers' ||
+    pathname === '/login' ||
+    pathname === '/register'
+  ) {
+    return 'header-black';
+  }
+};
 
 export const Header = () => {
   const location = useLocation();
 
-  const getHeaderColorClass = () => {
-    if (location.pathname === '/') {
-      return 'header-grey'; // Aplica la clase 'header-red' si está en la ruta de home
-    } else if (
-      location.pathname === '/myplayers' ||
-      location.pathname === '/login' ||
-      location.pathname === '/register'
-    ) {
-      return 'header-black'; // Aplica la clase 'header-blue' si está en la ruta de detalles
-    }
-
-    // Otras clases o rutas adicionales
-    return ''; // Clase por defecto si no coincide con ninguna ruta
-  };
-
-  const headerClasses = `header ${getHeaderColorClass()}`.trim(); // Combina clases dinámicamente
-
-  const { loggedUser } = useSelector((state: RootState) => state.usersState);
+  const headerClasses = `header ${getHeaderColorClass(
+    location.pathname
+  )}`.trim(); // Combina clases dinámicamente
+  const { loggedUser } = useUsers();
   return (
-    <header className={headerClasses}>
+    <header data-testid="header-element" className={headerClasses}>
       <div className="header-main-container">
         <div className="header-container">
           <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -59,7 +55,7 @@ export const Header = () => {
               <div className="image-user-logged">
                 <img
                   src={makeImageUrlToProperSize(loggedUser.avatar.publicId, 50)}
-                  alt=""
+                  alt="User avatar"
                 />
                 <p className="logged-user-name">{loggedUser.name}</p>
               </div>

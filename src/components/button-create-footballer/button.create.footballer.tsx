@@ -13,7 +13,7 @@ export const ButtonCreateFootballer = () => {
             to={'/create-footballer'}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            Create Footballer
+            <i className="fa-solid fa-plus"></i>
           </Link>
         </div>
       )}
