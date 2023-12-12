@@ -18,6 +18,7 @@ export const List = () => {
 
   return (
     <>
+      <h1>My Players</h1>
       {footballers.length > 0 && (
         <ul className="footballers-list">
           {footballers.map((item: Footballer) => (
