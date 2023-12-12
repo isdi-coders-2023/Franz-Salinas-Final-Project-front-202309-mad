@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Footballer } from '../models/footballers';
 import { loadFootballersThunk } from '../thunks/footballer.thunk';
 
-type FootballerState = {
+export type FootballerState = {
   footballers: Footballer[];
   footballerInitialState: 'idle' | 'loading' | 'error';
   currentFootballer: Footballer | null;
