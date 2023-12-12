@@ -7,6 +7,11 @@ type Props = {
 };
 
 export const Card = ({ info }: Props) => {
+  const mobileFootballerImage =
+    info &&
+    info.imageFootballer &&
+    makeImageUrlToProperSize(info?.imageFootballer.publicId, 100);
+
   const footballerImage =
     info &&
     info.imageFootballer &&
@@ -22,45 +27,61 @@ export const Card = ({ info }: Props) => {
                 <span></span>
               </div>
               <div className="player-position">
-                <span>{info.position}</span>
+                <span className="span-player-position">{info.position}</span>
               </div>
+              <div className="button-edit"></div>
+
+              <div className="button-details"></div>
+              <div className="button-delete"></div>
+              <div className="player-overall">{info.overall}</div>
             </div>
             <div className="player-picture">
-              <img src={footballerImage} alt="Messi" draggable="false" />
+              <img
+                src={footballerImage}
+                alt="footballer-card"
+                draggable="false"
+              />
+            </div>
+            <div className="player-picture-mobile">
+              <img
+                src={mobileFootballerImage}
+                alt="footballer-card"
+                draggable="false"
+              />
             </div>
           </div>
 
           <div className="player-card-bottom">
             <div className="player-info">
               <div className="player-name">
-                <span>{info.overall}</span>
+                <span className="span-player-name">{info.name}</span>
               </div>
 
               <div className="player-features">
                 <div className="player-features-col">
-                  <span>
+                  <span className="player-stats">
                     <div className="player-feature-value">{info.pace}</div>
                     <div className="player-feature-title">PAC</div>
                   </span>
-                  <span>
+                  <span className="player-stats">
                     <div className="player-feature-value">{info.shoot}</div>
                     <div className="player-feature-title">SHO</div>
                   </span>
-                  <span>
+                  <span className="player-stats">
                     <div className="player-feature-value">{info.passing}</div>
                     <div className="player-feature-title">PAS</div>
                   </span>
                 </div>
                 <div className="player-features-col">
-                  <span>
+                  <span className="player-stats">
                     <div className="player-feature-value">{info.drible}</div>
                     <div className="player-feature-title">DRI</div>
                   </span>
-                  <span>
+                  <span className="player-stats">
                     <div className="player-feature-value">{info.defense}</div>
                     <div className="player-feature-title">DEF</div>
                   </span>
-                  <span>
+                  <span className="player-stats">
                     <div className="player-feature-value">
                       {info.physicality}
                     </div>
@@ -72,6 +93,23 @@ export const Card = ({ info }: Props) => {
           </div>
         </div>
       </div>
+      <></>
     </>
   );
 };
+
+/*  Tem por si agrego
+ <div className="player-nation">
+                <img
+                  src="https://selimdoyranli.com/cdn/fut-player-card/img/argentina.svg"
+                  alt="Argentina"
+                  draggable="false"
+                />
+              </div>
+              <div className="player-club">
+                <img
+                  src="https://selimdoyranli.com/cdn/fut-player-card/img/barcelona.svg"
+                  alt="Barcelona"
+                  draggable="false"
+                />
+              </div> */
