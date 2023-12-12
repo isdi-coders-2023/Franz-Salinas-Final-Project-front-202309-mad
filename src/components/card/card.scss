@@ -205,6 +205,7 @@ $black-gradient-to-top: linear-gradient(
   .fut-player-card {
     width: 16rem;
     height: 20rem;
+    margin: 0rem 0rem 1.2rem 3rem;
   }
 
   .player-picture {
@@ -230,10 +231,6 @@ $black-gradient-to-top: linear-gradient(
   }
   .span-player-name {
     font-size: 1.1rem;
-  }
-
-  .fut-player-card {
-    margin: 0rem 0rem 0rem 3rem;
   }
 
   .player-card-top {

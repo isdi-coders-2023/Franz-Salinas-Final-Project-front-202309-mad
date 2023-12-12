@@ -33,7 +33,7 @@ export const Card = ({ info }: Props) => {
 
               <div className="button-details"></div>
               <div className="button-delete"></div>
-              <div className="player-overall">{info.overall}</div>
+              {/* <div className="player-overall">{info.overall}</div> */}
             </div>
             <div className="player-picture">
               <img
