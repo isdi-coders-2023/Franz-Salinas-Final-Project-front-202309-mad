@@ -23,7 +23,7 @@ export const AppRoutes = () => {
             path="/create-footballer"
             element={<CreateFootballerPage></CreateFootballerPage>}
           ></Route>
-          <Route path="/details:id" element={<Details></Details>}></Route>
+          <Route path="/details/:id" element={<Details></Details>}></Route>
         </Routes>
       </Suspense>
     </main>
