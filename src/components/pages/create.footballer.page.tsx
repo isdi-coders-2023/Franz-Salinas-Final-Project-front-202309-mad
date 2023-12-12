@@ -1,4 +1,3 @@
-/* export const CreateFootballerPage = () => {
+export const CreateFootballerPage = () => {
   return <></>;
 };
- */

@@ -1,7 +1,7 @@
 import { Login } from '../login/login';
 import './login.page.scss';
 
-export const LoginPage = () => {
+export default function LoginPage() {
   return (
     <section className="login-section">
       <div className="main-login-container">
@@ -17,4 +17,4 @@ export const LoginPage = () => {
       </div>
     </section>
   );
-};
+}

@@ -1,12 +1,16 @@
+import { Link } from 'react-router-dom';
 import { Footballer } from '../../models/footballers';
 import { makeImageUrlToProperSize } from '../../services/images';
 import './card.scss';
+import { useFootballer } from '../../hooks/footballer.hooks';
 
 type Props = {
   info: Footballer;
 };
 
 export const Card = ({ info }: Props) => {
+  const { handleDetailsPage } = useFootballer();
+
   const mobileFootballerImage =
     info &&
     info.imageFootballer &&
@@ -31,7 +35,15 @@ export const Card = ({ info }: Props) => {
               </div>
               <div className="button-edit"></div>
 
-              <div className="button-details"></div>
+              <Link
+                to={'/details/' + info.id}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <div
+                  className="button-details"
+                  onClick={() => handleDetailsPage(info)}
+                ></div>
+              </Link>
               <div className="button-delete"></div>
               {/* <div className="player-overall">{info.overall}</div> */}
             </div>

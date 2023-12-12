@@ -4,7 +4,7 @@ import { ButtonPreviousPage } from '../button-previous-page/button.previous.page
 import { List } from '../list/list';
 import './my.players.scss';
 
-export const MyPlayers = () => {
+export default function MyPlayers() {
   return (
     <div className="my-players-container">
       <ButtonCreateFootballer></ButtonCreateFootballer>
@@ -16,4 +16,4 @@ export const MyPlayers = () => {
       </div>
     </div>
   );
-};
+}

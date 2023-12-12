@@ -1,5 +1,5 @@
 import { Register } from '../register/register';
 
-export const RegisterPage = () => {
+export default function RegisterPage() {
   return <Register></Register>;
-};
+}

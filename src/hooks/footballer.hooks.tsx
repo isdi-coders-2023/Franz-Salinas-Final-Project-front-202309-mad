@@ -10,9 +10,8 @@ export const useFootballer = () => {
   const dispacht = useDispatch<AppDispatch>();
   const repo = useMemo(() => new FootballerRepo(), []);
 
-  const { footballers, footballerInitialState } = useSelector(
-    (state: RootState) => state.footballerState
-  );
+  const { footballers, footballerInitialState, currentFootballer } =
+    useSelector((state: RootState) => state.footballerState);
 
   const loadFootballer = useCallback(async () => {
     dispacht(loadFootballersThunk(repo));
@@ -27,5 +26,6 @@ export const useFootballer = () => {
     handleDetailsPage,
     footballers,
     footballerInitialState,
+    currentFootballer,
   };
 };
