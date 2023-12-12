@@ -1,3 +1,4 @@
+import { Footballer } from '../models/footballers';
 import { LoginUser, User } from '../models/users';
 import { FootballerRepo } from './footballer.repo';
 
@@ -13,6 +14,14 @@ describe('Given Class FootballerRepo ...', () => {
       });
     });
     const repo = new FootballerRepo();
+
+    test('Then the getFootballers should be used...', async () => {
+      const userMock: Footballer[] = [];
+
+      const result = await repo.getFootballers();
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual(userMock);
+    });
 
     test('Then the getUsers should be used...', async () => {
       const userMock: User[] = [];
@@ -41,7 +50,7 @@ describe('Given Class FootballerRepo ...', () => {
     });
   });
 
-  describe('When we instantiate and the response is ok', () => {
+  describe('When we instantiate and the response is not ok', () => {
     const errorStatus = 404;
     const errorStatusText = 'Not Found';
 
@@ -57,6 +66,11 @@ describe('Given Class FootballerRepo ...', () => {
     test('Then the getUsers should throw an error...', async () => {
       await expect(repo.getUsers()).rejects.toThrow();
     });
+
+    test('Then the getFootballers should throw an error...', async () => {
+      await expect(repo.getFootballers()).rejects.toThrow();
+    });
+
     test('Then the registerUser should throw an error...', async () => {
       await expect(
         repo.registerUser([] as unknown as FormData)
