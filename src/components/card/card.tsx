@@ -21,18 +21,43 @@ export const Card = ({ info }: Props) => {
     info.imageFootballer &&
     makeImageUrlToProperSize(info?.imageFootballer.publicId, 200);
 
+  const footballerTeamShield =
+    info &&
+    info.teamShieldFlag &&
+    makeImageUrlToProperSize(info?.teamShieldFlag.publicId, 30);
+
+  const footballerFlag =
+    info &&
+    info.countryFlag &&
+    makeImageUrlToProperSize(info?.countryFlag.publicId, 20);
+
   return (
     <>
       <div className=".fut-player-cards-container">
         <div className="fut-player-card">
           <div className="player-card-top">
             <div className="player-master-info">
-              <div className="player-rating">
-                <span></span>
-              </div>
               <div className="player-position">
                 <span className="span-player-position">{info.position}</span>
               </div>
+              <div className="player-nation">
+                <img
+                  src={footballerFlag}
+                  alt={`imagen de ${info.nationality} `}
+                  draggable="false"
+                />
+              </div>
+              <div className="player-club">
+                <img
+                  src={footballerTeamShield}
+                  alt="Barcelona"
+                  draggable="false"
+                />
+              </div>
+              <div className="player-rating">
+                <span></span>
+              </div>
+
               <div className="button-edit"></div>
 
               <Link

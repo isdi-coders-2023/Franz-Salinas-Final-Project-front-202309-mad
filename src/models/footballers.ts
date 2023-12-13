@@ -19,4 +19,8 @@ export type Footballer = {
   physicality: string;
   briefStory: string;
   imageFootballer: ImgData;
+  countryFlag: ImgData;
+  teamShieldFlag: ImgData;
+  currentTeam: string;
+  detailsImage: ImgData;
 };
