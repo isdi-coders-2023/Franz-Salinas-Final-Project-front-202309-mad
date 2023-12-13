@@ -10,7 +10,7 @@ export const loadFootballersThunk = createAsyncThunk<
   return footballers;
 });
 
-type Params = {
+export type Params = {
   repo: FootballerRepo;
   newFootballer: FormData;
 };

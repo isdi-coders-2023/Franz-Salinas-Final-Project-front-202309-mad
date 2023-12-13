@@ -1,7 +1,11 @@
 import { store } from '../store/store';
 import { FootballerRepo } from '../services/footballer.repo';
 
-import { loadFootballersThunk } from './footballer.thunk';
+import {
+  Params,
+  createFootballerThunk,
+  loadFootballersThunk,
+} from './footballer.thunk';
 
 describe('Given loadFootballersThunks ...', () => {
   describe('When we use them', () => {
@@ -11,11 +15,22 @@ describe('Given loadFootballersThunks ...', () => {
         createFootballer: jest.fn().mockReturnValue({}),
       } as unknown as FootballerRepo,
     };
-
+    const data = { ...mockRepo } as { repo: FootballerRepo };
     test('Then the getFootballers should have been called...', async () => {
-      const data = { ...mockRepo } as { repo: FootballerRepo };
       await store.dispatch(loadFootballersThunk(data.repo));
       expect(data.repo.getFootballers).toHaveBeenCalled();
+    });
+
+    test('Then the createFootballers should have been called...', async () => {
+      const newFootballer = {} as FormData;
+
+      await store.dispatch(
+        createFootballerThunk({
+          repo: data,
+          newFootballer: newFootballer,
+        })
+      );
+      expect(data.repo.createFootballer).toHaveBeenCalled();
     });
   });
 });

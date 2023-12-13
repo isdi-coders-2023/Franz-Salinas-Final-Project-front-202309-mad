@@ -28,11 +28,7 @@ export const useFootballer = () => {
   };
 
   const createFootballer = async (newFootballer: FormData) => {
-    try {
-      dispacht(createFootballerThunk({ repo, newFootballer }));
-    } catch (error) {
-      console.log((error as Error).message);
-    }
+    dispacht(createFootballerThunk({ repo, newFootballer }));
   };
 
   return {
