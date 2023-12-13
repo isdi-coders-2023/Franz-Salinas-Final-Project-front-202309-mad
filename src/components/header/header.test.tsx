@@ -1,34 +1,35 @@
 import '@testing-library/jest-dom';
 import { store } from '../../store/store';
-import { render /* screen */ } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Header, getHeaderColorClass } from './header';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
+import { useUsers } from '../../hooks/user.hooks';
 
-/* import { User } from '../../models/users';
-import { useUsers } from '../../hooks/user.hooks'; */
+jest.mock('../../hooks/user.hooks', () => ({
+  useUsers: jest.fn().mockReturnValue({
+    loggedUser: { name: 'Nitin', avatar: { publicId: 'test' } },
+  }),
+}));
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: jest.fn().mockReturnValue({
+    pathname: '/',
+  }),
+}));
 
 describe('Given Header component...', () => {
   describe('When pathnmae is /', () => {
-    let mockLocation: { pathname: string };
-
     beforeEach(() => {
-      mockLocation = {
-        pathname: '/',
-      };
-
-      jest.mock('react-router-dom', () => ({
-        ...jest.requireActual('react-router-dom'),
-        useLocation: jest.fn().mockReturnValue(mockLocation),
-      }));
+      render(
+        <Router>
+          <Provider store={store}>
+            <Header></Header>
+          </Provider>
+        </Router>
+      );
     });
-    render(
-      <Router>
-        <Provider store={store}>
-          <Header></Header>
-        </Provider>
-      </Router>
-    );
 
     test('When pathname is /, Then Header class should be header-grey', () => {
       const pathname = '/';
@@ -52,15 +53,8 @@ describe('Given Header component...', () => {
       expect(headerClass).toBe('header-black');
     });
   });
-  /* Para el Canarian describe('When the user is logged', () => {
+  describe('When the user is logged', () => {
     beforeEach(() => {
-      (useUsers as jest.Mock).mockReturnValue({
-        loggedUser: {
-          name: 'TestName',
-          avatar: { publicId: '1' },
-        } as unknown as User,
-        // makeLogout: jest.fn(),
-      });
       render(
         <Router>
           <Provider store={store}>
@@ -73,5 +67,14 @@ describe('Given Header component...', () => {
       const avatarLogin = screen.getByRole('img');
       expect(avatarLogin).toBeInTheDocument();
     });
-  }); */
+  });
+  describe('When the user is not logged', () => {
+    test('the user should see register and login', () => {
+      (useUsers as jest.Mock).mockReturnValue({
+        loggedUser: null,
+      });
+      expect(screen.getByTestId('register')).toBeInTheDocument();
+      expect(screen.getByTestId('login')).toBeInTheDocument();
+    });
+  });
 });

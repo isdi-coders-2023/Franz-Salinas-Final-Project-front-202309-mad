@@ -42,7 +42,7 @@ export const Header = () => {
 
           {!loggedUser && (
             <Link to={'/login'} style={{ textDecoration: 'none' }}>
-              <p>Login</p>
+              <p data-testid="login">Login</p>
             </Link>
           )}
 
@@ -54,6 +54,7 @@ export const Header = () => {
 
               <div className="image-user-logged">
                 <img
+                  role="img"
                   src={makeImageUrlToProperSize(loggedUser.avatar.publicId, 50)}
                   alt="User avatar"
                 />
@@ -66,7 +67,7 @@ export const Header = () => {
             to={'/register'}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            {!loggedUser && <p>Register</p>}
+            {!loggedUser && <p data-testid="register">Register</p>}
           </Link>
         </div>
       </div>
