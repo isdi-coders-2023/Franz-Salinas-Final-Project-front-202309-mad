@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { Header, getHeaderColorClass } from './header';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
-/* import { useUsers } from '../../hooks/user.hooks'; */
+import { useUsers } from '../../hooks/user.hooks';
 
 jest.mock('../../hooks/user.hooks', () => ({
   useUsers: jest.fn().mockReturnValue({
@@ -68,13 +68,20 @@ describe('Given Header component...', () => {
       expect(avatarLogin).toBeInTheDocument();
     });
   });
-  /* describe('When the user is not logged', () => {
+  describe('When the user is not logged', () => {
+    beforeEach(() => {
+      useUsers().loggedUser = null;
+      render(
+        <Router>
+          <Provider store={store}>
+            <Header></Header>
+          </Provider>
+        </Router>
+      );
+    });
     test('the user should see register and login', () => {
-      (useUsers as jest.Mock).mockReturnValue({
-        loggedUser: null,
-      });
       expect(screen.getByTestId('register')).toBeInTheDocument();
       expect(screen.getByTestId('login')).toBeInTheDocument();
     });
-  }); */
+  });
 });
