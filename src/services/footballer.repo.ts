@@ -8,6 +8,8 @@ export class FootballerRepo {
   userUrl = serverUrl + '/users';
   footballerUrl = serverUrl + '/footballers';
 
+  constructor(public token: string) {}
+
   async getFootballers(): Promise<Footballer[]> {
     const response = await fetch(this.footballerUrl);
     if (!response.ok)
@@ -17,6 +19,19 @@ export class FootballerRepo {
 
   async getUsers(): Promise<User[]> {
     const response = await fetch(this.userUrl);
+    if (!response.ok)
+      throw new Error(response.status + ' ' + response.statusText);
+    return response.json();
+  }
+
+  async createFootballer(newFootballer: FormData): Promise<Footballer> {
+    const response = await fetch(this.footballerUrl, {
+      method: 'POST',
+      body: newFootballer,
+      headers: {
+        Authorization: 'Bearer ' + this.token,
+      },
+    });
     if (!response.ok)
       throw new Error(response.status + ' ' + response.statusText);
     return response.json();
