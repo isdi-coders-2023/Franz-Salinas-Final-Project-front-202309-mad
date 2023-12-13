@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
-
+import './create.footballer.scss';
 import { useFootballer } from '../../hooks/footballer.hooks';
 import { Link } from 'react-router-dom';
 
