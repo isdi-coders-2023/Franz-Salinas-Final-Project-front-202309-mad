@@ -8,7 +8,10 @@ export const ButtonCreateFootballer = () => {
   return (
     <>
       {loggedUser && loggedUser.role === 'Admin' && (
-        <div className="button-create-footballer">
+        <div
+          className="button-create-footballer"
+          data-testid="button-create-footballer"
+        >
           <Link
             to={'/create-footballer'}
             style={{ textDecoration: 'none', color: 'inherit' }}
