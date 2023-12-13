@@ -41,6 +41,7 @@ export const Card = ({ info }: Props) => {
               >
                 <div
                   className="button-details"
+                  data-testid="button-details"
                   onClick={() => handleDetailsPage(info)}
                 ></div>
               </Link>
