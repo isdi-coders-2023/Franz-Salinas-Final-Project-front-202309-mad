@@ -32,25 +32,25 @@ describe('Given Header component...', () => {
     });
 
     test('When pathname is /, Then Header class should be header-grey', () => {
-      const pathname = '/';
-      const headerClass = getHeaderColorClass(pathname);
-      expect(headerClass).toBe('header-grey');
+      const pathnameHome = '/';
+      const headerClassHome = getHeaderColorClass(pathnameHome);
+      expect(headerClassHome).toBe('header-grey');
     });
 
     test('When pathname is /myplayers, Then Header class should be header-black', () => {
-      const pathname = '/myplayers';
-      const headerClass = getHeaderColorClass(pathname);
-      expect(headerClass).toBe('header-black');
+      const pathnamePlayers = '/myplayers';
+      const headerClassPlayers = getHeaderColorClass(pathnamePlayers);
+      expect(headerClassPlayers).toBe('header-black');
     });
     test('When pathname is /login, Then Header class should be header-black', () => {
-      const pathname = '/login';
-      const headerClass = getHeaderColorClass(pathname);
-      expect(headerClass).toBe('header-black');
+      const pathnameLogin = '/login';
+      const headerClassLogin = getHeaderColorClass(pathnameLogin);
+      expect(headerClassLogin).toBe('header-black');
     });
     test('When pathname is /register, Then Header class should be header-black', () => {
-      const pathname = '/register';
-      const headerClass = getHeaderColorClass(pathname);
-      expect(headerClass).toBe('header-black');
+      const pathnameRegister = '/register';
+      const headerClassRegister = getHeaderColorClass(pathnameRegister);
+      expect(headerClassRegister).toBe('header-black');
     });
   });
   describe('When the user is logged', () => {
