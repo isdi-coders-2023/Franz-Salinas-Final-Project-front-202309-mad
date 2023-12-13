@@ -112,7 +112,7 @@ export const Card = ({ info }: Props) => {
 };
 
 /*  Tem por si agrego
- <div className="player-nation">
+  <div className="player-nation">
                 <img
                   src="https://selimdoyranli.com/cdn/fut-player-card/img/argentina.svg"
                   alt="Argentina"
