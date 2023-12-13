@@ -8,6 +8,7 @@ describe('Given loadFootballersThunks ...', () => {
     const mockRepo = {
       repo: {
         getFootballers: jest.fn().mockReturnValue([]),
+        createFootballer: jest.fn().mockReturnValue({}),
       } as unknown as FootballerRepo,
     };
 
