@@ -7,8 +7,8 @@ export const Details = () => {
 
   const detailsFootballerImage =
     currentFootballer &&
-    currentFootballer.imageFootballer &&
-    makeImageUrlToProperSize(currentFootballer?.imageFootballer.publicId, 100);
+    currentFootballer.detailsImage &&
+    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 100);
 
   return (
     <>

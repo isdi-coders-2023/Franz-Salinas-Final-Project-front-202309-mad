@@ -82,8 +82,25 @@ export const CreateFootballer = () => {
             <input type="text" name="briefStory" />
           </label>
           <label htmlFor="">
-            Image
+            current Team
+            <input type="text" name="currentTeam" />
+          </label>
+
+          <label htmlFor="">
+            Image Card
             <input type="file" name="imageFootballer" required />
+          </label>
+          <label htmlFor="">
+            Details Image
+            <input type="file" name="detailsImage" required />
+          </label>
+          <label htmlFor="">
+            Country Flag
+            <input type="file" name="countryFlag" required />
+          </label>
+          <label htmlFor="">
+            Team Shield
+            <input type="file" name="teamShieldFlag" required />
           </label>
 
           <button type="submit">Create</button>
