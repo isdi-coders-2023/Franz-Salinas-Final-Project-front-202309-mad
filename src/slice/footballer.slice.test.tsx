@@ -36,15 +36,18 @@ describe('Given footballeReducer ...', () => {
 describe('Given footballeReducer ...', () => {
   describe('When we use the loadFootballer method and its pending', () => {
     test('Then the state should be loading', () => {
-      const mockFootballer = { name: 'elias' } as unknown as Footballer;
+      const mockFootballerPending = { name: 'elias' } as unknown as Footballer;
 
-      const action = {
+      const actionPending = {
         type: 'load/pending',
-        payload: mockFootballer,
+        payload: mockFootballerPending,
       };
-      const state: FootballerState = {} as FootballerState;
-      const result = footballersReducer(state, action);
-      expect(result.footballerInitialState).toBe('loading');
+      const stateForPending: FootballerState = {} as FootballerState;
+      const resultForPending = footballersReducer(
+        stateForPending,
+        actionPending
+      );
+      expect(resultForPending.footballerInitialState).toBe('loading');
     });
   });
 });
@@ -52,15 +55,18 @@ describe('Given footballeReducer ...', () => {
 describe('Given footballeReducer ...', () => {
   describe('When we use the loadFootballer method and its rejected', () => {
     test('Then the state should be error', () => {
-      const mockFootballer = { name: 'elias' } as unknown as Footballer;
+      const mockFootballerRejected = { name: 'elias' } as unknown as Footballer;
 
-      const action = {
+      const actionRejected = {
         type: 'load/rejected',
-        payload: mockFootballer,
+        payload: mockFootballerRejected,
       };
-      const state: FootballerState = {} as FootballerState;
-      const result = footballersReducer(state, action);
-      expect(result.footballerInitialState).toBe('error');
+      const stateForRejected: FootballerState = {} as FootballerState;
+      const resultForRejected = footballersReducer(
+        stateForRejected,
+        actionRejected
+      );
+      expect(resultForRejected.footballerInitialState).toBe('error');
     });
   });
 });
