@@ -3,12 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from '../pages/home.page';
 
-import { CreateFootballerPage } from '../pages/create.footballer.page';
-
 const Details = lazy(() => import('../pages/details.page'));
 const Login = lazy(() => import('../pages/login.page'));
 const MyPlayers = lazy(() => import('../pages/my.players'));
 const Register = lazy(() => import('../pages/register.page'));
+const CreateFootballerPage = lazy(
+  () => import('../pages/create.footballer.page')
+);
 
 export const AppRoutes = () => {
   return (

@@ -1,6 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Footballer } from '../models/footballers';
-import { loadFootballersThunk } from '../thunks/footballer.thunk';
+import {
+  createFootballerThunk,
+  loadFootballersThunk,
+} from '../thunks/footballer.thunk';
 
 export type FootballerState = {
   footballers: Footballer[];
@@ -45,6 +48,14 @@ const footballerSlice = createSlice({
     builder.addCase(loadFootballersThunk.rejected, (state: FootballerState) => {
       state.footballerInitialState = 'error';
     });
+
+    builder.addCase(
+      createFootballerThunk.fulfilled,
+      (state: FootballerState, { payload }: PayloadAction<Footballer>) => {
+        state.footballers.push(payload);
+        return state;
+      }
+    );
   },
 });
 

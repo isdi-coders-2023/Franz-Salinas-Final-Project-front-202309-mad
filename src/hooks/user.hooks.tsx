@@ -8,7 +8,8 @@ import { logginUserThunk, logginWithTokenThunk } from '../thunks/thunks';
 
 export function useUsers() {
   const dispacht = useDispatch<AppDispatch>();
-  const repo = new FootballerRepo();
+  const { token } = useSelector((state: RootState) => state.usersState);
+  const repo = new FootballerRepo(token);
   const userStorageData = new StorageData<{ token: string }>('users');
   const { loggedUser } = useSelector((state: RootState) => state.usersState);
 

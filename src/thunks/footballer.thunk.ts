@@ -9,3 +9,15 @@ export const loadFootballersThunk = createAsyncThunk<
   const footballers = await repo.getFootballers();
   return footballers;
 });
+
+type Params = {
+  repo: FootballerRepo;
+  newFootballer: FormData;
+};
+export const createFootballerThunk = createAsyncThunk<Footballer, Params>(
+  'create',
+  async ({ repo, newFootballer }) => {
+    const createFootballer = await repo.createFootballer(newFootballer);
+    return createFootballer;
+  }
+);
