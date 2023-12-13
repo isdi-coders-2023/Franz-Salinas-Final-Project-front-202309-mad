@@ -46,3 +46,25 @@ describe('Given footballeReducer ...', () => {
     });
   });
 });
+
+describe('Given footballeReducer ...', () => {
+  describe('When we use the loadFootballer and its fulfilled or pending or rejected ', () => {
+    test('Then the state should be idle', () => {
+      const mockFootballer = {
+        id: '1',
+        name: 'elias',
+      } as unknown as Footballer;
+
+      const action = {
+        type: 'create/fulfilled',
+        payload: mockFootballer,
+      };
+
+      const state: FootballerState = {
+        footballers: [],
+      } as unknown as FootballerState;
+      const result = footballersReducer(state, action);
+      expect(result.footballers).toEqual([mockFootballer]);
+    });
+  });
+});
