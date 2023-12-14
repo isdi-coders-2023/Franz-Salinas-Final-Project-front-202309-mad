@@ -3,6 +3,7 @@ import { Footballer } from '../../models/footballers';
 import { makeImageUrlToProperSize } from '../../services/images';
 import './card.scss';
 import { useFootballer } from '../../hooks/footballer.hooks';
+import Swal from 'sweetalert2';
 
 type Props = {
   info: Footballer;
@@ -10,10 +11,6 @@ type Props = {
 
 export const Card = ({ info }: Props) => {
   const { handleDetailsPage, deleteFootballer } = useFootballer();
-
-  const handleDelete = () => {
-    deleteFootballer(info.id);
-  };
 
   const mobileFootballerImage =
     info &&
@@ -34,6 +31,26 @@ export const Card = ({ info }: Props) => {
     info &&
     info.countryFlag &&
     makeImageUrlToProperSize(info?.countryFlag.publicId, 20);
+
+  const handleDelete = () => {
+    Swal.fire({
+      title: 'Are you sure you want to delete this card?',
+      showDenyButton: true,
+      confirmButtonText: 'Accept',
+      denyButtonText: 'Cancel',
+      customClass: {
+        popup: 'my-swal-popup', // Clase personalizada para el contenedor principal
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteFootballer(info.id);
+        Swal.fire({
+          title: 'Card Deleted',
+          icon: 'success',
+        });
+      }
+    });
+  };
 
   return (
     <>
@@ -69,12 +86,17 @@ export const Card = ({ info }: Props) => {
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <div
+                  role="button"
                   className="button-details"
                   data-testid="button-details"
                   onClick={() => handleDetailsPage(info)}
                 ></div>
               </Link>
-              <button className="button-delete" onClick={handleDelete}></button>
+              <div
+                className="button-delete"
+                role="button"
+                onClick={() => handleDelete()}
+              ></div>
               {/* <div className="player-overall">{info.overall}</div> */}
             </div>
             <div className="player-picture">

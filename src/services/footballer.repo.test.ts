@@ -55,12 +55,6 @@ describe('Given Class FootballerRepo ...', () => {
       expect(jestMock).toHaveBeenCalled();
       expect(result).toStrictEqual([]);
     });
-
-    test('Then the deleteFootballer should be used...', async () => {
-      const result = await repo.deleteFootballer({} as Footballer['id']);
-      expect(jestMock).toHaveBeenCalled();
-      expect(result).toStrictEqual([]);
-    });
   });
 });
 

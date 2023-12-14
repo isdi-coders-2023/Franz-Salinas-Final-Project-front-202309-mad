@@ -3,6 +3,7 @@ import { AppDispatch, RootState } from '../store/store';
 import { FootballerRepo } from '../services/footballer.repo';
 import { setCurrentFootballer } from '../slice/footballer.slice';
 import { useCallback, useMemo } from 'react';
+
 import {
   createFootballerThunk,
   deleteFootballerThunk,
@@ -41,6 +42,7 @@ export const useFootballer = () => {
     handleDetailsPage,
     createFootballer,
     deleteFootballer,
+
     footballers,
     footballerInitialState,
     currentFootballer,
