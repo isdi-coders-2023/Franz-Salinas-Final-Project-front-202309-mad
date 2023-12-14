@@ -48,7 +48,7 @@ describe('Given footballeReducer ...', () => {
 });
 
 describe('Given footballeReducer ...', () => {
-  describe('When we use the loadFootballer and its fulfilled or pending or rejected ', () => {
+  describe('When we use the createFootballer and its fulfilled or pending or rejected ', () => {
     test('Then the state should be idle', () => {
       const mockFootballer = {
         id: '1',
@@ -65,6 +65,25 @@ describe('Given footballeReducer ...', () => {
       } as unknown as FootballerState;
       const result = footballersReducer(state, action);
       expect(result.footballers).toEqual([mockFootballer]);
+    });
+  });
+});
+
+describe('Given footballeReducer ...', () => {
+  describe('When we use the loadFootballer and its fulfilled or pending or rejected ', () => {
+    test('Then the state should be idle', () => {
+      const mockFootballer = [] as unknown as Footballer['id'];
+
+      const action = {
+        type: 'delete/fulfilled',
+        payload: mockFootballer,
+      };
+
+      const state: FootballerState = {
+        footballers: [],
+      } as unknown as FootballerState;
+      const result = footballersReducer(state, action);
+      expect(result.footballers).toEqual(mockFootballer);
     });
   });
 });

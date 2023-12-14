@@ -21,3 +21,11 @@ export const createFootballerThunk = createAsyncThunk<Footballer, Params>(
     return createFootballer;
   }
 );
+
+export const deleteFootballerThunk = createAsyncThunk<
+  Footballer['id'],
+  { repo: FootballerRepo; footballerId: Footballer['id'] }
+>('delete', async ({ repo, footballerId }) => {
+  await repo.deleteFootballer(footballerId);
+  return footballerId;
+});

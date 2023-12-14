@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Footballer } from '../models/footballers';
 import {
   createFootballerThunk,
+  deleteFootballerThunk,
   loadFootballersThunk,
 } from '../thunks/footballer.thunk';
 
@@ -53,6 +54,20 @@ const footballerSlice = createSlice({
       createFootballerThunk.fulfilled,
       (state: FootballerState, { payload }: PayloadAction<Footballer>) => {
         state.footballers.push(payload);
+        return state;
+      }
+    );
+
+    builder.addCase(
+      deleteFootballerThunk.fulfilled,
+      (
+        state: FootballerState,
+        { payload }: PayloadAction<Footballer['id']>
+      ) => {
+        state.footballers.splice(
+          state.footballers.findIndex((item) => item.id === payload),
+          1
+        );
         return state;
       }
     );
