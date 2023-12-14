@@ -2,7 +2,6 @@ import { store } from '../store/store';
 import { FootballerRepo } from '../services/footballer.repo';
 
 import {
-  Params,
   createFootballerThunk,
   loadFootballersThunk,
 } from './footballer.thunk';
@@ -23,12 +22,10 @@ describe('Given loadFootballersThunks ...', () => {
 
     test('Then the createFootballers should have been called...', async () => {
       const newFootballer = {} as FormData;
+      const createData = { ...mockRepo } as { repo: FootballerRepo };
 
       await store.dispatch(
-        createFootballerThunk({
-          repo: data,
-          newFootballer: newFootballer,
-        })
+        createFootballerThunk({ repo: createData.repo, newFootballer })
       );
       expect(data.repo.createFootballer).toHaveBeenCalled();
     });
