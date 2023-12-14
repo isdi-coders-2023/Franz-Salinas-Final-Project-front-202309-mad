@@ -12,15 +12,21 @@ jest.mock('react-redux', () => ({
 
 describe('Given useFootballer...', () => {
   const TestComponent = () => {
-    const { loadFootballer, handleDetailsPage, createFootballer } =
-      useFootballer();
+    const {
+      loadFootballer,
+      handleDetailsPage,
+      createFootballer,
+      deleteFootballer,
+    } = useFootballer();
     const footballerMock = { name: 'Serafin' } as unknown as Footballer;
     const footballerMockCreate = { name: 'Serafin' } as unknown as FormData;
+    const footballerIdMock = { id: '1' } as unknown as Footballer['id'];
     return (
       <>
         <button onClick={() => loadFootballer()}></button>
         <button onClick={() => handleDetailsPage(footballerMock)}></button>
         <button onClick={() => createFootballer(footballerMockCreate)}></button>
+        <button onClick={() => deleteFootballer(footballerIdMock)}></button>
       </>
     );
   };
@@ -53,6 +59,12 @@ describe('Given useFootballer...', () => {
   describe('When we click the button createFootballer', () => {
     test('Then the dispacht should have be called...', async () => {
       await userEvent.click(elements[2]);
+      expect(useDispatch()).toHaveBeenCalled();
+    });
+  });
+  describe('When we click the button deleteFootballer', () => {
+    test('Then the dispacht should have be called...', async () => {
+      await userEvent.click(elements[3]);
       expect(useDispatch()).toHaveBeenCalled();
     });
   });

@@ -9,7 +9,11 @@ type Props = {
 };
 
 export const Card = ({ info }: Props) => {
-  const { handleDetailsPage } = useFootballer();
+  const { handleDetailsPage, deleteFootballer } = useFootballer();
+
+  const handleDelete = () => {
+    deleteFootballer(info.id);
+  };
 
   const mobileFootballerImage =
     info &&
@@ -70,11 +74,12 @@ export const Card = ({ info }: Props) => {
                   onClick={() => handleDetailsPage(info)}
                 ></div>
               </Link>
-              <div className="button-delete"></div>
+              <button className="button-delete" onClick={handleDelete}></button>
               {/* <div className="player-overall">{info.overall}</div> */}
             </div>
             <div className="player-picture">
               <img
+                role="button"
                 src={footballerImage}
                 alt="footballer-card"
                 draggable="false"

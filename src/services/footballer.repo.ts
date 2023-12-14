@@ -40,14 +40,13 @@ export class FootballerRepo {
   async deleteFootballer(footballerId: Footballer['id']): Promise<void> {
     const deleteUrl = `${this.footballerUrl}/${footballerId}`;
     const response = await fetch(deleteUrl, {
-      method: 'DETETE',
+      method: 'DELETE',
       headers: {
         Authorization: 'Bearer ' + this.token,
       },
     });
     if (!response.ok)
       throw new Error(response.status + ' ' + response.statusText);
-    return response.json();
   }
 
   async registerUser(newUser: FormData): Promise<User> {

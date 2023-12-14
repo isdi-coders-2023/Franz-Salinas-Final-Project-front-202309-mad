@@ -5,6 +5,7 @@ import { setCurrentFootballer } from '../slice/footballer.slice';
 import { useCallback, useMemo } from 'react';
 import {
   createFootballerThunk,
+  deleteFootballerThunk,
   loadFootballersThunk,
 } from '../thunks/footballer.thunk';
 import { Footballer } from '../models/footballers';
@@ -31,10 +32,15 @@ export const useFootballer = () => {
     dispacht(createFootballerThunk({ repo, newFootballer }));
   };
 
+  const deleteFootballer = async (footballerId: Footballer['id']) => {
+    dispacht(deleteFootballerThunk({ footballerId, repo }));
+  };
+
   return {
     loadFootballer,
     handleDetailsPage,
     createFootballer,
+    deleteFootballer,
     footballers,
     footballerInitialState,
     currentFootballer,
