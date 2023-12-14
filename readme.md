@@ -2,4 +2,4 @@
 
 The Dream Team Fc App
 
-Author: Franz Salinas
+Author: Franz
