@@ -11,11 +11,13 @@ export type FootballerState = {
   footballers: Footballer[];
   footballerInitialState: 'idle' | 'loading' | 'error';
   currentFootballer: Footballer | null;
+  footballerUpdateState: 'idle' | 'loading';
 };
 
 const initialState: FootballerState = {
   footballers: [],
   footballerInitialState: 'idle',
+  footballerUpdateState: 'idle',
   currentFootballer: null,
 };
 
@@ -80,14 +82,14 @@ const footballerSlice = createSlice({
           state.footballers[
             state.footballers.findIndex((item) => item.id === payload.id)
           ];
-        state.footballerInitialState = 'idle';
+        state.footballerUpdateState = 'idle';
         state.currentFootballer = findFootballer;
         return state;
       }
     );
 
     builder.addCase(updateFootballerThunk.pending, (state: FootballerState) => {
-      state.footballerInitialState = 'loading';
+      state.footballerUpdateState = 'loading';
       return state;
     });
   },

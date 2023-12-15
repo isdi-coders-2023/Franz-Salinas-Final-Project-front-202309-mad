@@ -17,8 +17,12 @@ export const useFootballer = () => {
 
   const { token } = useSelector((state: RootState) => state.usersState);
 
-  const { footballers, footballerInitialState, currentFootballer } =
-    useSelector((state: RootState) => state.footballerState);
+  const {
+    footballers,
+    footballerInitialState,
+    currentFootballer,
+    footballerUpdateState,
+  } = useSelector((state: RootState) => state.footballerState);
 
   const repo = useMemo(() => new FootballerRepo(token), []);
 
@@ -58,5 +62,6 @@ export const useFootballer = () => {
     footballers,
     footballerInitialState,
     currentFootballer,
+    footballerUpdateState,
   };
 };

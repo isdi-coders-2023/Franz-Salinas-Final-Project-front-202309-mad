@@ -11,7 +11,8 @@ export const EditFootballer = () => {
     updateFootbaler,
     footballers,
     loadFootballer,
-    footballerInitialState,
+
+    footballerUpdateState,
   } = useFootballer();
 
   const { id } = useParams();
@@ -30,7 +31,7 @@ export const EditFootballer = () => {
   useEffect(() => {
     loadFootballer();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [footballerInitialState]);
+  }, [footballerUpdateState]);
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

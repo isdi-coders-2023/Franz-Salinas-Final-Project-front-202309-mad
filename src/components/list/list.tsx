@@ -8,12 +8,16 @@ import './list.scss';
   footballerToRender: Footballer[] | undefined;
 }; */
 export const List = () => {
-  const { loadFootballer, footballers, footballerInitialState } =
-    useFootballer();
+  const {
+    loadFootballer,
+    footballers,
+    footballerInitialState,
+    footballerUpdateState,
+  } = useFootballer();
 
   useEffect(() => {
     loadFootballer();
-  }, [loadFootballer]);
+  }, [footballerUpdateState]);
 
   if (footballerInitialState === 'loading') {
     return <p>LOADING</p>;
