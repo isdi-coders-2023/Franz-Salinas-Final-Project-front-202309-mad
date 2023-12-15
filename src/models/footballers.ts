@@ -7,9 +7,10 @@ export type Footballer = {
   position: string;
   nationality: string;
   age: string;
-  author: User;
   surname: string;
   preferFoot: string;
+  author: User;
+
   pace: string;
   shoot: string;
   passing: string;

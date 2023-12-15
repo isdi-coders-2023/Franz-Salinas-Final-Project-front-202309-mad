@@ -1,0 +1,37 @@
+@import '../vars.scss';
+
+.edit-form {
+  font-family: $mainFont;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-send {
+  font-size: 1.5rem;
+  font-style: italic;
+  border-radius: 1rem;
+  width: 7rem;
+  padding: 0.3rem;
+  color: #fff;
+  background-color: rgba(24, 156, 78, 1);
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-cancel-edit-page {
+  font-size: 1.5rem;
+  font-style: italic;
+  border-radius: 1rem;
+  width: 7rem;
+  padding: 0.3rem;
+  color: #fff;
+  background-color: rgba(24, 156, 78, 1);
+  text-align: center;
+}

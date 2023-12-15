@@ -4,6 +4,9 @@ import { Footballer } from '../../models/footballers';
 import { Card } from '../card/card';
 import './list.scss';
 
+/* type Props = {
+  footballerToRender: Footballer[] | undefined;
+}; */
 export const List = () => {
   const { loadFootballer, footballers, footballerInitialState } =
     useFootballer();

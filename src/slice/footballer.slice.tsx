@@ -4,6 +4,7 @@ import {
   createFootballerThunk,
   deleteFootballerThunk,
   loadFootballersThunk,
+  updateFootballerThunk,
 } from '../thunks/footballer.thunk';
 
 export type FootballerState = {
@@ -71,6 +72,24 @@ const footballerSlice = createSlice({
         return state;
       }
     );
+
+    builder.addCase(
+      updateFootballerThunk.fulfilled,
+      (state: FootballerState, { payload }: PayloadAction<Footballer>) => {
+        const findFootballer =
+          state.footballers[
+            state.footballers.findIndex((item) => item.id === payload.id)
+          ];
+        state.footballerInitialState = 'idle';
+        state.currentFootballer = findFootballer;
+        return state;
+      }
+    );
+
+    builder.addCase(updateFootballerThunk.pending, (state: FootballerState) => {
+      state.footballerInitialState = 'loading';
+      return state;
+    });
   },
 });
 

@@ -10,6 +10,7 @@ const Register = lazy(() => import('../pages/register.page'));
 const CreateFootballerPage = lazy(
   () => import('../pages/create.footballer.page')
 );
+const EditFootballer = lazy(() => import('../pages/edit.footballer.page'));
 
 export const AppRoutes = () => {
   return (
@@ -25,6 +26,10 @@ export const AppRoutes = () => {
             element={<CreateFootballerPage></CreateFootballerPage>}
           ></Route>
           <Route path="/details/:id" element={<Details></Details>}></Route>
+          <Route
+            path="/edit/:id"
+            element={<EditFootballer></EditFootballer>}
+          ></Route>
         </Routes>
       </Suspense>
     </main>

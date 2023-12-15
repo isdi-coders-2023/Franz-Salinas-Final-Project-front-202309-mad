@@ -61,8 +61,8 @@ export class FootballerRepo {
   }
 
   async updateFootballer(
-    updateFootballer: FormData,
-    footballerId: string
+    footballerId: Footballer['id'],
+    updateFootballer: FormData
   ): Promise<Footballer> {
     const updateUrl = `${this.footballerUrl}/${footballerId}`;
     const response = await fetch(updateUrl, {
@@ -72,6 +72,8 @@ export class FootballerRepo {
         Authorization: 'Bearer ' + this.token,
       },
     });
+    if (!response.ok)
+      throw new Error(response.status + ' ' + response.statusText);
     return response.json();
   }
 

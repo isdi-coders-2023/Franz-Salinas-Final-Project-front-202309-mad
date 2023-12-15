@@ -57,7 +57,7 @@ describe('Given Class FootballerRepo ...', () => {
     });
 
     test('Then the updateFootballer should be used...', async () => {
-      const result = await repo.updateFootballer({} as FormData, '1' as string);
+      const result = await repo.updateFootballer('1' as string, {} as FormData);
       expect(jestMock).toHaveBeenCalled();
       expect(result).toStrictEqual([]);
     });
@@ -98,7 +98,7 @@ describe('When we instantiate and the response is not ok', () => {
   });
   test('Then the updateFootballer should throw an error...', async () => {
     await expect(
-      repo.updateFootballer([] as unknown as FormData, '1' as string)
+      repo.updateFootballer('1' as string, [] as unknown as FormData)
     ).rejects.toThrow();
   });
 

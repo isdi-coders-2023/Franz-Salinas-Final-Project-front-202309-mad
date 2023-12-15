@@ -78,8 +78,9 @@ export const Card = ({ info }: Props) => {
               <div className="player-rating">
                 <span></span>
               </div>
-
-              <div className="button-edit"></div>
+              <Link to={'/edit/' + info.id}>
+                <div className="button-edit"></div>
+              </Link>
 
               <Link
                 to={'/details/' + info.id}

@@ -29,3 +29,24 @@ export const deleteFootballerThunk = createAsyncThunk<
   await repo.deleteFootballer(footballerId);
   return footballerId;
 });
+
+/* export type ParasmsTwo = {
+  repo: FootballerRepo;
+  updateFootballer: FormData;
+  footballerId: Footballer['id'];
+}; */
+
+export const updateFootballerThunk = createAsyncThunk<
+  Footballer,
+  {
+    repo: FootballerRepo;
+    footballerId: Footballer['id'];
+    updateFootballer: FormData;
+  }
+>('update', async ({ repo, footballerId, updateFootballer }) => {
+  const updatedFootballer = await repo.updateFootballer(
+    footballerId,
+    updateFootballer
+  );
+  return updatedFootballer;
+});

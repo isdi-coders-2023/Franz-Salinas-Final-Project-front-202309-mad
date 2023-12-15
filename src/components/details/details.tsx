@@ -16,6 +16,7 @@ export const Details = () => {
         <img src={detailsFootballerImage!} alt="footballer-image-details" />
         <p className="footballer-name"> {currentFootballer?.name}</p>
         <p className=""> {currentFootballer?.nationality}</p>
+        <p className=""> {currentFootballer?.preferFoot}</p>
       </div>
     </>
   );

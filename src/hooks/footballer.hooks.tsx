@@ -8,6 +8,7 @@ import {
   createFootballerThunk,
   deleteFootballerThunk,
   loadFootballersThunk,
+  updateFootballerThunk,
 } from '../thunks/footballer.thunk';
 import { Footballer } from '../models/footballers';
 
@@ -37,12 +38,23 @@ export const useFootballer = () => {
     dispacht(deleteFootballerThunk({ footballerId, repo }));
   };
 
+  const updateFootbaler = async (
+    footballerId: Footballer['id'],
+    updateFootballer: FormData
+  ) => {
+    try {
+      dispacht(updateFootballerThunk({ footballerId, repo, updateFootballer }));
+    } catch (error) {
+      error as Error;
+    }
+  };
+
   return {
     loadFootballer,
     handleDetailsPage,
     createFootballer,
     deleteFootballer,
-
+    updateFootbaler,
     footballers,
     footballerInitialState,
     currentFootballer,

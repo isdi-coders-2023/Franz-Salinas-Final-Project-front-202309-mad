@@ -5,6 +5,7 @@ import {
   createFootballerThunk,
   deleteFootballerThunk,
   loadFootballersThunk,
+  /* updateFootballerThunk, */
 } from './footballer.thunk';
 import { Footballer } from '../models/footballers';
 
@@ -42,5 +43,20 @@ describe('Given loadFootballersThunks ...', () => {
       );
       expect(data.repo.createFootballer).toHaveBeenCalled();
     });
+
+    /* test('Then the updateFootballers should have been called...', async () => {
+      const updateFootballer = {} as FormData;
+      const createData = { ...mockRepo } as { repo: FootballerRepo };
+      const footballerId = {} as Footballer['id'];
+
+      await store.dispatch(
+        updateFootballerThunk({
+          repo: createData.repo,
+          updateFootballer,
+          footballerId,
+        })
+      );
+      expect(data.repo.updateFootballer).toHaveBeenCalled();
+    }); */
   });
 });
