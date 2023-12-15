@@ -17,11 +17,11 @@ describe('Given Class FootballerRepo ...', () => {
     const repo = new FootballerRepo(mockToken);
 
     test('Then the getFootballers should be used...', async () => {
-      const userMock: Footballer[] = [];
+      const footballerMock: Footballer[] = [];
 
       const result = await repo.getFootballers();
       expect(jestMock).toHaveBeenCalled();
-      expect(result).toStrictEqual(userMock);
+      expect(result).toStrictEqual(footballerMock);
     });
 
     test('Then the getUsers should be used...', async () => {
@@ -52,6 +52,12 @@ describe('Given Class FootballerRepo ...', () => {
 
     test('Then the createFootballer should be used...', async () => {
       const result = await repo.createFootballer({} as FormData);
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual([]);
+    });
+
+    test('Then the updateFootballer should be used...', async () => {
+      const result = await repo.updateFootballer({} as FormData, '1' as string);
       expect(jestMock).toHaveBeenCalled();
       expect(result).toStrictEqual([]);
     });
@@ -88,6 +94,11 @@ describe('When we instantiate and the response is not ok', () => {
   test('Then the createFootballer should throw an error...', async () => {
     await expect(
       repo.createFootballer([] as unknown as FormData)
+    ).rejects.toThrow();
+  });
+  test('Then the updateFootballer should throw an error...', async () => {
+    await expect(
+      repo.updateFootballer([] as unknown as FormData, '1' as string)
     ).rejects.toThrow();
   });
 

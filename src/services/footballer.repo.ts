@@ -60,6 +60,21 @@ export class FootballerRepo {
     return response.json();
   }
 
+  async updateFootballer(
+    updateFootballer: FormData,
+    footballerId: string
+  ): Promise<Footballer> {
+    const updateUrl = `${this.footballerUrl}/${footballerId}`;
+    const response = await fetch(updateUrl, {
+      method: 'PATCH',
+      body: updateFootballer,
+      headers: {
+        Authorization: 'Bearer ' + this.token,
+      },
+    });
+    return response.json();
+  }
+
   async loginUser(loginUser: LoginUser): Promise<LoginResponse> {
     const loginUrl = this.userUrl + '/login';
     const response = await fetch(loginUrl, {
