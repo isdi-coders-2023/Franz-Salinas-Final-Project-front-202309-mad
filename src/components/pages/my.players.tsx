@@ -1,4 +1,3 @@
-import { useFootballer } from '../../hooks/footballer.hooks';
 import { ButtonCreateFootballer } from '../button-create-footballer/button.create.footballer';
 import { ButtonNextPage } from '../button-next-page/button.next.page';
 import { ButtonPreviousPage } from '../button-previous-page/button.previous.page';
@@ -6,12 +5,11 @@ import { List } from '../list/list';
 import './my.players.scss';
 
 export default function MyPlayers() {
-  const { footballers } = useFootballer();
   return (
     <div className="my-players-container">
       <ButtonCreateFootballer></ButtonCreateFootballer>
 
-      <List footballerToRender={footballers}></List>
+      <List></List>
       <div className="my-players-button-container">
         <ButtonPreviousPage></ButtonPreviousPage>
         <ButtonNextPage></ButtonNextPage>

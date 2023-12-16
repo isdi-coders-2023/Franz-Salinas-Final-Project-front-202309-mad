@@ -1,11 +1,12 @@
 import { SyntheticEvent, useState } from 'react';
 import './create.footballer.scss';
 import { useFootballer } from '../../hooks/footballer.hooks';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const CreateFootballer = () => {
   const [hasCreate, setCreate] = useState(false);
   const { createFootballer } = useFootballer();
+  const navigate = useNavigate();
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -13,6 +14,7 @@ export const CreateFootballer = () => {
     const formData = new FormData(formElement);
     createFootballer(formData);
     setCreate(true);
+    navigate('/myplayers');
   };
 
   return (

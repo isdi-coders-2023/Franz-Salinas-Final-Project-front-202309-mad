@@ -48,7 +48,9 @@ export const Header = () => {
 
           {loggedUser && (
             <>
-              <p>My team</p>
+              <Link to={'/userlist'} style={{ textDecoration: 'none' }}>
+                <p>My team</p>
+              </Link>
 
               <Logout></Logout>
 

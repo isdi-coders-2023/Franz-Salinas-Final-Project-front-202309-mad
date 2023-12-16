@@ -7,7 +7,7 @@ export const ButtonCreateFootballer = () => {
 
   return (
     <>
-      {loggedUser && loggedUser.role === 'Admin' && (
+      {loggedUser /* && loggedUser.role === 'Admin'  */ && (
         <div
           className="button-create-footballer"
           data-testid="button-create-footballer"
