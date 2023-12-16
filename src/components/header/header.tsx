@@ -11,7 +11,8 @@ export const getHeaderColorClass = (pathname: string) => {
   } else if (
     pathname === '/myplayers' ||
     pathname === '/login' ||
-    pathname === '/register'
+    pathname === '/register' ||
+    pathname === '/user-list'
   ) {
     return 'header-black';
   }
@@ -48,7 +49,7 @@ export const Header = () => {
 
           {loggedUser && (
             <>
-              <Link to={'/userlist'} style={{ textDecoration: 'none' }}>
+              <Link to={'/user-list'} style={{ textDecoration: 'none' }}>
                 <p>My team</p>
               </Link>
 

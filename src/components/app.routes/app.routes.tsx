@@ -2,7 +2,6 @@ import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from '../pages/home.page';
-import { UserList } from '../pages/user.list.tsx';
 
 const Details = lazy(() => import('../pages/details.page'));
 const Login = lazy(() => import('../pages/login.page'));
@@ -12,7 +11,7 @@ const CreateFootballerPage = lazy(
   () => import('../pages/create.footballer.page')
 );
 const EditFootballer = lazy(() => import('../pages/edit.footballer.page'));
-
+const MyTeam = lazy(() => import('../pages/my.team.tsx'));
 export const AppRoutes = () => {
   return (
     <main>
@@ -31,7 +30,7 @@ export const AppRoutes = () => {
             path="/edit/:id"
             element={<EditFootballer></EditFootballer>}
           ></Route>
-          <Route path="/userlist" element={<UserList></UserList>}></Route>
+          <Route path="/user-list" element={<MyTeam></MyTeam>}></Route>
         </Routes>
       </Suspense>
     </main>

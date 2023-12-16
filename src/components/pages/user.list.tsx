@@ -13,7 +13,7 @@ export const UserList = (/* { footballerToRender }: Props */) => {
   const {
     loadFootballer,
     footballers,
-    footballerInitialState,
+
     footballerUpdateState,
     // Suponiendo que tienes acceso a la información del usuario logeado
   } = useFootballer();
@@ -25,7 +25,7 @@ export const UserList = (/* { footballerToRender }: Props */) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [footballerUpdateState]);
 
-  if (footballerInitialState === 'loading') {
+  if (footballerUpdateState === 'loading') {
     return <p>LOADING</p>;
   }
 
