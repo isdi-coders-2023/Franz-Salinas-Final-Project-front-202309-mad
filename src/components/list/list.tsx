@@ -4,13 +4,13 @@ import { Footballer } from '../../models/footballers';
 import { Card } from '../card/card';
 import './list.scss';
 
-/* type Props = {
+type Props = {
   footballerToRender: Footballer[] | undefined;
-}; */
-export const List = () => {
+};
+export const List = ({ footballerToRender }: Props) => {
   const {
     loadFootballer,
-    footballers,
+
     footballerInitialState,
     footballerUpdateState,
   } = useFootballer();
@@ -26,13 +26,13 @@ export const List = () => {
   return (
     <>
       <h1>My Players</h1>
-      {footballers.length > 0 && (
+      {
         <ul className="footballers-list">
-          {footballers.map((item: Footballer) => (
-            <Card info={item} key={item.id}></Card>
+          {footballerToRender?.map((item: Footballer) => (
+            <Card key={item.id} info={item}></Card>
           ))}
         </ul>
-      )}
+      }
     </>
   );
 };

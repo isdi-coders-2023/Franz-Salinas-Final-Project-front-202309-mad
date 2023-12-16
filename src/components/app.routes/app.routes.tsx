@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from '../pages/home.page';
+import { UserList } from '../pages/user.page';
 
 const Details = lazy(() => import('../pages/details.page'));
 const Login = lazy(() => import('../pages/login.page'));
@@ -30,6 +31,7 @@ export const AppRoutes = () => {
             path="/edit/:id"
             element={<EditFootballer></EditFootballer>}
           ></Route>
+          <Route path="/userlist" element={<UserList></UserList>}></Route>
         </Routes>
       </Suspense>
     </main>
