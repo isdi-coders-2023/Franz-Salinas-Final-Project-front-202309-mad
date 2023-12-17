@@ -18,7 +18,7 @@ export const List = (/* { footballerToRender }: Props */) => {
 
   useEffect(() => {
     loadFootballer();
-  }, [footballerUpdateState]);
+  }, [loadFootballer, footballerUpdateState]);
 
   if (footballerInitialState === 'loading') {
     return <p>LOADING</p>;

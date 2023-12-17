@@ -18,8 +18,9 @@ export class FootballerRepo {
   }
 
   async filterFootballer(query: string): Promise<Footballer[]> {
-    const filterUrl = `${this.footballerUrl}/search?position=${query}`;
-    const response = await fetch(filterUrl);
+    const response = await fetch(
+      `${this.footballerUrl}/search?position=${query}`
+    );
     if (!response.ok)
       throw new Error(response.status + ' ' + response.statusText);
     return response.json();

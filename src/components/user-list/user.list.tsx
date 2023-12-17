@@ -5,25 +5,18 @@ import { Card } from '../card/card';
 
 import { useUsers } from '../../hooks/user.hooks';
 import { ButtonCreateFootballer } from '../button-create-footballer/button.create.footballer';
+import { Filter } from '../filter/filter';
 
-/* type Props = {
-  footballerToRender: Footballer[] | undefined;
-}; */
-export const UserList = (/* { footballerToRender }: Props */) => {
-  const {
-    loadFootballer,
-    footballers,
-
-    footballerUpdateState,
-    // Suponiendo que tienes acceso a la información del usuario logeado
-  } = useFootballer();
+export const UserList = () => {
+  const { loadFootballer, footballers, footballerUpdateState } =
+    useFootballer();
 
   const { loggedUser } = useUsers();
 
   useEffect(() => {
     loadFootballer();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [footballerUpdateState]);
+  }, [loadFootballer, footballerUpdateState]);
 
   if (footballerUpdateState === 'loading') {
     return <p>LOADING</p>;
@@ -37,6 +30,7 @@ export const UserList = (/* { footballerToRender }: Props */) => {
   return (
     <>
       <ButtonCreateFootballer></ButtonCreateFootballer>
+      <Filter></Filter>
       <h1>My Players</h1>
       <ul className="footballers-list">
         {userFootballers.map((item: Footballer) => (
