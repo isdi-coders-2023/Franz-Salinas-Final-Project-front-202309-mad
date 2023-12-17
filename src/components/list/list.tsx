@@ -3,6 +3,7 @@ import { useFootballer } from '../../hooks/footballer.hooks';
 import { Footballer } from '../../models/footballers';
 import { Card } from '../card/card';
 import './list.scss';
+import { Filter } from '../filter/filter';
 
 /* type Props = {
   footballerToRender: Footballer[] | undefined;
@@ -26,6 +27,7 @@ export const List = (/* { footballerToRender }: Props */) => {
   return (
     <>
       <h1>My Players</h1>
+      <Filter></Filter>
       {
         <ul className="footballers-list">
           {footballers.map((item: Footballer) => (

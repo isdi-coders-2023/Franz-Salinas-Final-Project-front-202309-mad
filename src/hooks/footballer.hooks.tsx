@@ -1,12 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store/store';
 import { FootballerRepo } from '../services/footballer.repo';
-import { setCurrentFootballer } from '../slice/footballer.slice';
-import { useCallback, useMemo } from 'react';
+import {
+  setCurrentFootballer,
+  setSelectedValue,
+} from '../slice/footballer.slice';
+import { SyntheticEvent, useCallback, useMemo } from 'react';
 
 import {
   createFootballerThunk,
   deleteFootballerThunk,
+  filterFootballerThunk,
   loadFootballersThunk,
   updateFootballerThunk,
 } from '../thunks/footballer.thunk';
@@ -22,13 +26,19 @@ export const useFootballer = () => {
     footballerInitialState,
     currentFootballer,
     footballerUpdateState,
+    filteredFootballer,
+    selectedValue,
   } = useSelector((state: RootState) => state.footballerState);
 
   const repo = useMemo(() => new FootballerRepo(token), []);
 
   const loadFootballer = useCallback(async () => {
-    dispacht(loadFootballersThunk(repo));
-  }, [dispacht, repo]);
+    if (selectedValue === '') {
+      dispacht(loadFootballersThunk(repo));
+    } else {
+      dispacht(filterFootballerThunk({ repo, query: selectedValue }));
+    }
+  }, [repo, selectedValue]);
 
   const handleDetailsPage = async (footballer: Footballer) => {
     dispacht(setCurrentFootballer(footballer));
@@ -53,12 +63,22 @@ export const useFootballer = () => {
     }
   };
 
+  const handleFilterFootballer = (event: SyntheticEvent) => {
+    event.preventDefault();
+    const element = event.target as HTMLInputElement;
+    const value = element.value;
+    dispacht(setSelectedValue(value));
+    dispacht(filterFootballerThunk({ repo, query: value }));
+  };
+
   return {
     loadFootballer,
     handleDetailsPage,
     createFootballer,
     deleteFootballer,
     updateFootbaler,
+    handleFilterFootballer,
+    filteredFootballer,
     footballers,
     footballerInitialState,
     currentFootballer,

@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { useUsers } from '../../hooks/user.hooks';
 import './register.scss';
+import Swal from 'sweetalert2';
 
 export const Register = () => {
   const [hasRegister, setRegister] = useState(false);
@@ -12,6 +13,26 @@ export const Register = () => {
     const formData = new FormData(formElement);
     register(formData);
     setRegister(true);
+  };
+
+  const handleDelete = () => {
+    Swal.fire({
+      title: 'Are you sure you want to delete this card?',
+      showDenyButton: true,
+      confirmButtonText: 'Accept',
+      denyButtonText: 'Cancel',
+      customClass: {
+        popup: 'my-swal-popup', // Clase personalizada para el contenedor principal
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteFootballer(info.id);
+        Swal.fire({
+          title: 'Card Deleted',
+          icon: 'success',
+        });
+      }
+    });
   };
 
   return (

@@ -17,6 +17,14 @@ export class FootballerRepo {
     return response.json();
   }
 
+  async filterFootballer(query: string): Promise<Footballer[]> {
+    const filterUrl = `${this.footballerUrl}/search?position=${query}`;
+    const response = await fetch(filterUrl);
+    if (!response.ok)
+      throw new Error(response.status + ' ' + response.statusText);
+    return response.json();
+  }
+
   async getUsers(): Promise<User[]> {
     const response = await fetch(this.userUrl);
     if (!response.ok)

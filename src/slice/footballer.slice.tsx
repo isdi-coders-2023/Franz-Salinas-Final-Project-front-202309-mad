@@ -3,6 +3,7 @@ import { Footballer } from '../models/footballers';
 import {
   createFootballerThunk,
   deleteFootballerThunk,
+  filterFootballerThunk,
   loadFootballersThunk,
   updateFootballerThunk,
 } from '../thunks/footballer.thunk';
@@ -12,6 +13,8 @@ export type FootballerState = {
   footballerInitialState: 'idle' | 'loading' | 'error';
   currentFootballer: Footballer | null;
   footballerUpdateState: 'idle' | 'loading';
+  filteredFootballer: Footballer[];
+  selectedValue: string;
 };
 
 const initialState: FootballerState = {
@@ -19,6 +22,8 @@ const initialState: FootballerState = {
   footballerInitialState: 'idle',
   footballerUpdateState: 'idle',
   currentFootballer: null,
+  filteredFootballer: [],
+  selectedValue: '',
 };
 
 const footballerSlice = createSlice({
@@ -30,6 +35,14 @@ const footballerSlice = createSlice({
       { payload }: PayloadAction<Footballer | null>
     ) => {
       state.currentFootballer = payload;
+      return state;
+    },
+
+    setSelectedValue: (
+      state: FootballerState,
+      { payload }: PayloadAction<string>
+    ) => {
+      state.selectedValue = payload;
       return state;
     },
   },
@@ -92,9 +105,18 @@ const footballerSlice = createSlice({
       state.footballerUpdateState = 'loading';
       return state;
     });
+
+    builder.addCase(
+      filterFootballerThunk.fulfilled,
+      (state: FootballerState, { payload }: PayloadAction<Footballer[]>) => {
+        state.footballers = payload;
+        return state;
+      }
+    );
   },
 });
 
 export default footballerSlice.reducer;
 
-export const { setCurrentFootballer } = footballerSlice.actions;
+export const { setCurrentFootballer, setSelectedValue } =
+  footballerSlice.actions;

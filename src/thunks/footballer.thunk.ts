@@ -30,12 +30,6 @@ export const deleteFootballerThunk = createAsyncThunk<
   return footballerId;
 });
 
-/* export type ParasmsTwo = {
-  repo: FootballerRepo;
-  updateFootballer: FormData;
-  footballerId: Footballer['id'];
-}; */
-
 export const updateFootballerThunk = createAsyncThunk<
   Footballer,
   {
@@ -50,3 +44,17 @@ export const updateFootballerThunk = createAsyncThunk<
   );
   return updatedFootballer;
 });
+
+export const filterFootballerThunk = createAsyncThunk(
+  'filter',
+  async ({ repo, query }: { repo: FootballerRepo; query: string }) => {
+    const allFootballers = await repo.filterFootballer(query);
+    if (query === '') {
+      return allFootballers;
+    } else {
+      return allFootballers.filter(
+        (footballer) => footballer.position === query
+      );
+    }
+  }
+);
