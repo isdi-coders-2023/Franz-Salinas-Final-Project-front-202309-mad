@@ -51,13 +51,19 @@ export const EditFootballer = () => {
     navigate('/myplayers');
   };
   return (
-    <form onSubmit={handleUpdate} className="edit-form" aria-label="form">
+    <form
+      onSubmit={handleUpdate}
+      className="edit-form"
+      aria-label="form"
+      data-testid="form-id"
+    >
       <label>
         Name
         <input
           type="text"
           value={findFootballer?.name}
           name="name"
+          placeholder="Nombre"
           className="input-edit"
           onChange={handleInputChange}
           required
