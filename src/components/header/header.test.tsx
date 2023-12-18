@@ -53,35 +53,45 @@ describe('Given Header component...', () => {
       expect(headerClassRegister).toBe('header-black');
     });
   });
-  describe('When the user is logged', () => {
-    beforeEach(() => {
-      render(
-        <Router>
-          <Provider store={store}>
-            <Header></Header>
-          </Provider>
-        </Router>
-      );
-    });
-    test('Then should render the logged user avatar', () => {
-      const avatarLogin = screen.getByRole('img');
-      expect(avatarLogin).toBeInTheDocument();
-    });
+  test('When pathname is /userList, Then Header class should be header-black', () => {
+    const pathnameRegister = '/user-list';
+    const headerClassRegister = getHeaderColorClass(pathnameRegister);
+    expect(headerClassRegister).toBe('header-black');
   });
-  describe('When the user is not logged', () => {
-    beforeEach(() => {
-      useUsers().loggedUser = null;
-      render(
-        <Router>
-          <Provider store={store}>
-            <Header></Header>
-          </Provider>
-        </Router>
-      );
-    });
-    test('the user should see register and login', () => {
-      expect(screen.getByTestId('register')).toBeInTheDocument();
-      expect(screen.getByTestId('login')).toBeInTheDocument();
-    });
+  test('When pathname is/create-footballer, Then Header class should be header-black', () => {
+    const pathnameRegister = '/create-footballer';
+    const headerClassRegister = getHeaderColorClass(pathnameRegister);
+    expect(headerClassRegister).toBe('header-black');
+  });
+});
+describe('When the user is logged', () => {
+  beforeEach(() => {
+    render(
+      <Router>
+        <Provider store={store}>
+          <Header></Header>
+        </Provider>
+      </Router>
+    );
+  });
+  test('Then should render the logged user avatar', () => {
+    const avatarLogin = screen.getByRole('img');
+    expect(avatarLogin).toBeInTheDocument();
+  });
+});
+describe('When the user is not logged', () => {
+  beforeEach(() => {
+    useUsers().loggedUser = null;
+    render(
+      <Router>
+        <Provider store={store}>
+          <Header></Header>
+        </Provider>
+      </Router>
+    );
+  });
+  test('the user should see register and login', () => {
+    expect(screen.getByTestId('register')).toBeInTheDocument();
+    expect(screen.getByTestId('login')).toBeInTheDocument();
   });
 });

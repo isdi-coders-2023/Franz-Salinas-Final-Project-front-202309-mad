@@ -48,7 +48,7 @@ describe('Given loadFootballersThunks ...', () => {
     });
 
     test('Then the filterFootballers should have been called...', async () => {
-      const footballerQuery = {} as unknown as string;
+      const footballerQuery = 'CM' as unknown as string;
       const createData = { ...mockRepo } as { repo: FootballerRepo };
 
       await store.dispatch(
@@ -57,10 +57,23 @@ describe('Given loadFootballersThunks ...', () => {
       expect(data.repo.filterFootballer).toHaveBeenCalled();
     });
 
+    test('Then the filterFootballers should have been called with an emphy string...', async () => {
+      const footballerQuery = '' as unknown as string;
+      const createData = { ...mockRepo } as { repo: FootballerRepo };
+
+      await store.dispatch(
+        filterFootballerThunk({
+          repo: createData.repo,
+          query: footballerQuery,
+        })
+      );
+      expect(data.repo.filterFootballer).toHaveBeenCalled();
+    });
+
     test('Then the updateFootballers should have been called...', async () => {
       const updateFootballer = {} as FormData;
       const createData = { ...mockRepo } as { repo: FootballerRepo };
-      const footballerId = {} as Footballer['id'];
+      const footballerId = '123' as Footballer['id'];
 
       await store.dispatch(
         updateFootballerThunk({
