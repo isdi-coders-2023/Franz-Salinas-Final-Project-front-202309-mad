@@ -18,6 +18,22 @@ describe('Given footballeReducer ...', () => {
 });
 
 describe('Given footballeReducer ...', () => {
+  describe('When we use the setSelectedValue method', () => {
+    test('Then the state should be the one in the payload...', () => {
+      const mockFootballer = { value: 'CM' } as unknown as Footballer;
+
+      const action = {
+        type: 'footballer/setSelectedValue',
+        payload: mockFootballer,
+      };
+      const state: FootballerState = {} as FootballerState;
+      const result = footballersReducer(state, action);
+      expect(result.selectedValue).toBe(mockFootballer);
+    });
+  });
+});
+
+describe('Given footballeReducer ...', () => {
   describe('When we use the loadFootballer and its fulfilled or pending or rejected ', () => {
     test('Then the state should be idle', () => {
       const mockFootballer = { name: 'elias' } as unknown as Footballer;
@@ -70,7 +86,7 @@ describe('Given footballeReducer ...', () => {
 });
 
 describe('Given footballeReducer ...', () => {
-  describe('When we use the loadFootballer and its fulfilled or pending or rejected ', () => {
+  describe('When we use the deleteFootballer and its fulfilled', () => {
     test('Then the state should be idle', () => {
       const mockFootballer = [] as unknown as Footballer['id'];
 
@@ -84,6 +100,32 @@ describe('Given footballeReducer ...', () => {
       } as unknown as FootballerState;
       const result = footballersReducer(state, action);
       expect(result.footballers).toEqual(mockFootballer);
+    });
+  });
+});
+
+describe('Given footballeReducer ...', () => {
+  describe('When we use the updateFootballer and its fulfilled or pending', () => {
+    test('Then the state should be idle', () => {
+      const mockFootballer = [] as unknown as Footballer['id'];
+
+      const action = {
+        type: 'update/fulfilled',
+        payload: mockFootballer,
+      };
+
+      const actionPending = {
+        type: 'update/pending',
+        payload: mockFootballer,
+      };
+
+      const state: FootballerState = {
+        footballers: [],
+      } as unknown as FootballerState;
+      const result = footballersReducer(state, action);
+      expect(result.footballers).toEqual(mockFootballer);
+      const resultPending = footballersReducer(state, actionPending);
+      expect(resultPending.footballers).toEqual(mockFootballer);
     });
   });
 });
