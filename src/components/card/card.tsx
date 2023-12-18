@@ -86,26 +86,25 @@ export const Card = ({ info }: Props) => {
                   style={{ textDecoration: 'none', color: 'inherit' }}
                 >
                   <div className="button-edit">
-                    <i className="fa-solid fa-eye"></i>
-                  </div>
-                </Link>
-              )}
-
-              {loggedUser && (
-                <Link
-                  to={'/details/' + info.id}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  <div
-                    role="button"
-                    className="button-details"
-                    data-testid="button-details"
-                    onClick={() => handleDetailsPage(info)}
-                  >
                     <i className="fa-solid fa-pencil"></i>
                   </div>
                 </Link>
               )}
+
+              <Link
+                to={'/details/' + info.id}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <div
+                  role="button"
+                  className="button-details"
+                  data-testid="button-details"
+                  onClick={() => handleDetailsPage(info)}
+                >
+                  <i className="fa-solid fa-eye"></i>
+                </div>
+              </Link>
+
               {loggedUser && (
                 <div
                   className="button-delete"

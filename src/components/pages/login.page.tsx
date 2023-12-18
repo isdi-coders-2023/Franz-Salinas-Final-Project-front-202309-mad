@@ -5,8 +5,10 @@ export default function LoginPage() {
   return (
     <section className="login-section">
       <div className="main-login-container">
-        <h1 className="title-login-page">Login</h1>
-        <Login></Login>
+        <div className="title-login-container"></div>
+        <div className="login-component-container">
+          <Login></Login>
+        </div>
       </div>
 
       <div className="image-login">

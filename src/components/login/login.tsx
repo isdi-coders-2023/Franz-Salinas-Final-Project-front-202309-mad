@@ -25,20 +25,31 @@ export const Login = () => {
     <>
       {!loggedUser && (
         <form onSubmit={handleSubmit} className="login-form" aria-label="form">
-          <label>
-            Email
-            <input type="text" name="email" className="input-login" required />
-          </label>
-
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              className="input-login"
-              required
-            />
-          </label>
+          <h1 className="title-login-page">Login</h1>
+          <div className="inputs-container">
+            <div className="email-input">
+              <label>
+                Email
+                <input
+                  type="text"
+                  name="email"
+                  className="input-login"
+                  required
+                />
+              </label>
+            </div>
+            <div className="password-input">
+              <label>
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  className="input-login"
+                  required
+                />
+              </label>
+            </div>
+          </div>
 
           <div className="buttons-login-page">
             <button type="submit" className="login-button">
