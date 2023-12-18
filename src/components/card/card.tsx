@@ -163,19 +163,3 @@ export const Card = ({ info }: Props) => {
     </>
   );
 };
-
-/*  Tem por si agrego
-  <div className="player-nation">
-                <img
-                  src="https://selimdoyranli.com/cdn/fut-player-card/img/argentina.svg"
-                  alt="Argentina"
-                  draggable="false"
-                />
-              </div>
-              <div className="player-club">
-                <img
-                  src="https://selimdoyranli.com/cdn/fut-player-card/img/barcelona.svg"
-                  alt="Barcelona"
-                  draggable="false"
-                />
-              </div> */

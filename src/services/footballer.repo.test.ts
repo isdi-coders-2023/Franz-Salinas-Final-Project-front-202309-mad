@@ -61,6 +61,12 @@ describe('Given Class FootballerRepo ...', () => {
       expect(jestMock).toHaveBeenCalled();
       expect(result).toStrictEqual([]);
     });
+
+    test('Then the filterFootballer should be used...', async () => {
+      const result = await repo.filterFootballer('1' as string);
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual([]);
+    });
   });
 });
 
@@ -100,6 +106,9 @@ describe('When we instantiate and the response is not ok', () => {
     await expect(
       repo.updateFootballer('1' as string, [] as unknown as FormData)
     ).rejects.toThrow();
+  });
+  test('Then the updateFootballer should throw an error...', async () => {
+    await expect(repo.filterFootballer('1' as string)).rejects.toThrow();
   });
 
   test('Then the deleteFootballer should throw an error...', async () => {
