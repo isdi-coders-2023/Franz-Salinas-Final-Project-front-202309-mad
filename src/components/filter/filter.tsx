@@ -1,4 +1,5 @@
 import { useFootballer } from '../../hooks/footballer.hooks';
+import './filter.scss';
 
 export const Filter = () => {
   const { handleFilterFootballer } = useFootballer();
@@ -6,7 +7,7 @@ export const Filter = () => {
   return (
     <div className="filter-container">
       <select name="filter-positions" onChange={handleFilterFootballer}>
-        <option value="">What position do you want?</option>
+        <option value="">Positions</option>
         <option value="GK">GK</option>
         <option value="RB">RB</option>
         <option value="CBR">CBR</option>

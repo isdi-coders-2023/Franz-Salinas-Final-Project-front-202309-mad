@@ -1,0 +1,13 @@
+@import '../vars.scss';
+
+select {
+  background: black;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  font-family: $titleFount;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-top: 4rem;
+  margin-right: 3rem;
+}

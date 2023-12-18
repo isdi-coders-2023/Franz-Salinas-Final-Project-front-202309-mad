@@ -1,13 +1,15 @@
 .button-create-footballer {
   font-size: 1.3rem;
-
   border-radius: 1rem;
   width: 5rem;
   height: 2.4rem;
   padding: 0.3rem;
   color: #fff;
   background-color: rgba(24, 156, 78, 1);
-  text-align: center;
   margin-top: 4rem;
   margin-left: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

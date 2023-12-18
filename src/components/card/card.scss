@@ -175,7 +175,10 @@ $black-gradient-to-top: linear-gradient(
   position: relative;
   bottom: 6rem;
   left: 13.5rem;
-
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 1rem;
   text-decoration: none;
 }
@@ -192,6 +195,10 @@ $black-gradient-to-top: linear-gradient(
   left: 13.5rem;
   gap: 1rem;
   text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .button-delete {
@@ -206,6 +213,10 @@ $black-gradient-to-top: linear-gradient(
   left: 13.5rem;
   gap: 1rem;
   text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .player-picture-mobile {

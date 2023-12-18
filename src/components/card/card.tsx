@@ -81,7 +81,10 @@ export const Card = ({ info }: Props) => {
                 <span></span>
               </div>
               {loggedUser && (
-                <Link to={'/edit/' + info.id}>
+                <Link
+                  to={'/edit/' + info.id}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
                   <div className="button-edit">
                     <i className="fa-solid fa-eye"></i>
                   </div>

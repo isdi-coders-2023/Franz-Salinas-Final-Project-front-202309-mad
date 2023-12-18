@@ -29,9 +29,17 @@ export const UserList = () => {
 
   return (
     <>
-      <ButtonCreateFootballer></ButtonCreateFootballer>
-      <Filter></Filter>
-      <h1>My Players</h1>
+      <div className="top-buttons-container">
+        <div>
+          {' '}
+          <ButtonCreateFootballer></ButtonCreateFootballer>
+        </div>
+        <div>
+          <Filter></Filter>
+        </div>
+      </div>
+
+      <h1>My Team</h1>
       <ul className="footballers-list">
         {userFootballers.map((item: Footballer) => (
           <Card key={item.id} info={item}></Card>
@@ -40,27 +48,3 @@ export const UserList = () => {
     </>
   );
 };
-
-// import { useUsers } from '../../hooks/user.hooks';
-// import { ButtonCreateFootballer } from '../button-create-footballer/button.create.footballer';
-// import { ButtonNextPage } from '../button-next-page/button.next.page';
-// import { ButtonPreviousPage } from '../button-previous-page/button.previous.page';
-// /* import { List } from '../list/list'; */
-// import './my.players.scss';
-
-// export function UserList() {
-//   const { loggedUser } = useUsers();
-
-//   return (
-//     <div className="my-players-container">
-//       <ButtonCreateFootballer></ButtonCreateFootballer>
-
-//       <div {...loggedUser?.footballers}></div>
-//       {/* <List footballerToRender={loggedUser!.footballers}></List> */}
-//       <div className="my-players-button-container">
-//         <ButtonPreviousPage></ButtonPreviousPage>
-//         <ButtonNextPage></ButtonNextPage>
-//       </div>
-//     </div>
-//   );
-// }
