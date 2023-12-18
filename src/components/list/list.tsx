@@ -4,10 +4,7 @@ import { Footballer } from '../../models/footballers';
 import { Card } from '../card/card';
 import './list.scss';
 
-/* type Props = {
-  footballerToRender: Footballer[] | undefined;
-}; */
-export const List = (/* { footballerToRender }: Props */) => {
+export const List = () => {
   const {
     loadFootballer,
     footballers,
