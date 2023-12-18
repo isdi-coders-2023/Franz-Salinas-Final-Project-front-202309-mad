@@ -15,6 +15,11 @@ jest.mock('../../hooks/footballer.hooks', () => ({
     deleteFootballer: jest.fn(),
   }),
 }));
+jest.mock('../../hooks/user.hooks', () => ({
+  useUsers: jest.fn().mockReturnValue({
+    loggedUser: { name: 'Nitin', avatar: { publicId: 'Test' } },
+  }),
+}));
 
 jest.mock('../../services/images', () => ({
   makeImageUrlToProperSize: jest.fn(),

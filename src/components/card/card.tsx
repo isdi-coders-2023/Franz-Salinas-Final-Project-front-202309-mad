@@ -4,6 +4,7 @@ import { makeImageUrlToProperSize } from '../../services/images';
 import './card.scss';
 import { useFootballer } from '../../hooks/footballer.hooks';
 import Swal from 'sweetalert2';
+import { useUsers } from '../../hooks/user.hooks';
 
 type Props = {
   info: Footballer;
@@ -11,6 +12,7 @@ type Props = {
 
 export const Card = ({ info }: Props) => {
   const { handleDetailsPage, deleteFootballer } = useFootballer();
+  const { loggedUser } = useUsers();
 
   const mobileFootballerImage =
     info &&
@@ -20,7 +22,7 @@ export const Card = ({ info }: Props) => {
   const footballerImage =
     info &&
     info.imageFootballer &&
-    makeImageUrlToProperSize(info?.imageFootballer.publicId, 200);
+    makeImageUrlToProperSize(info?.imageFootballer.publicId, 190);
 
   const footballerTeamShield =
     info &&
@@ -78,26 +80,39 @@ export const Card = ({ info }: Props) => {
               <div className="player-rating">
                 <span></span>
               </div>
-              <Link to={'/edit/' + info.id}>
-                <div className="button-edit"></div>
-              </Link>
+              {loggedUser && (
+                <Link to={'/edit/' + info.id}>
+                  <div className="button-edit">
+                    <i className="fa-solid fa-eye"></i>
+                  </div>
+                </Link>
+              )}
 
-              <Link
-                to={'/details/' + info.id}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
+              {loggedUser && (
+                <Link
+                  to={'/details/' + info.id}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <div
+                    role="button"
+                    className="button-details"
+                    data-testid="button-details"
+                    onClick={() => handleDetailsPage(info)}
+                  >
+                    <i className="fa-solid fa-pencil"></i>
+                  </div>
+                </Link>
+              )}
+              {loggedUser && (
                 <div
+                  className="button-delete"
                   role="button"
-                  className="button-details"
-                  data-testid="button-details"
-                  onClick={() => handleDetailsPage(info)}
-                ></div>
-              </Link>
-              <div
-                className="button-delete"
-                role="button"
-                onClick={() => handleDelete()}
-              ></div>
+                  onClick={() => handleDelete()}
+                >
+                  <i className="fa-solid fa-eraser"></i>
+                </div>
+              )}
+
               {/* <div className="player-overall">{info.overall}</div> */}
             </div>
             <div className="player-picture">

@@ -88,18 +88,18 @@ describe('Given footballeReducer ...', () => {
 describe('Given footballeReducer ...', () => {
   describe('When we use the deleteFootballer and its fulfilled', () => {
     test('Then the state should be idle', () => {
-      const mockFootballer = [] as unknown as Footballer['id'];
+      const mockFootballers = [{ id: '123' }] as unknown as Footballer[];
 
       const action = {
         type: 'delete/fulfilled',
-        payload: mockFootballer,
+        payload: mockFootballers,
       };
 
       const state: FootballerState = {
-        footballers: [],
+        footballers: [{ id: '123' }],
       } as unknown as FootballerState;
       const result = footballersReducer(state, action);
-      expect(result.footballers).toEqual(mockFootballer);
+      expect(result.footballers).toEqual([]);
     });
   });
 });
@@ -107,25 +107,44 @@ describe('Given footballeReducer ...', () => {
 describe('Given footballeReducer ...', () => {
   describe('When we use the updateFootballer and its fulfilled or pending', () => {
     test('Then the state should be idle', () => {
-      const mockFootballer = [] as unknown as Footballer['id'];
+      const mockFootballers = [{ id: '123' }] as unknown as Footballer[];
 
       const action = {
         type: 'update/fulfilled',
-        payload: mockFootballer,
+        payload: mockFootballers,
       };
 
       const actionPending = {
         type: 'update/pending',
-        payload: mockFootballer,
+        payload: mockFootballers,
+      };
+
+      const state: FootballerState = {
+        footballers: [{ id: '123' }],
+      } as unknown as FootballerState;
+      const result = footballersReducer(state, action);
+      expect(result.footballers).toEqual(mockFootballers);
+      const resultPending = footballersReducer(state, actionPending);
+      expect(resultPending.footballers).toEqual(mockFootballers);
+    });
+  });
+});
+
+describe('Given footballeReducer ...', () => {
+  describe('When we use the filterFootballer and its fulfilled', () => {
+    test('Then the state should be idle', () => {
+      const mockFootballers = [{ position: 'CM' }] as unknown as Footballer[];
+
+      const action = {
+        type: 'filter/fulfilled',
+        payload: mockFootballers,
       };
 
       const state: FootballerState = {
         footballers: [],
       } as unknown as FootballerState;
       const result = footballersReducer(state, action);
-      expect(result.footballers).toEqual(mockFootballer);
-      const resultPending = footballersReducer(state, actionPending);
-      expect(resultPending.footballers).toEqual(mockFootballer);
+      expect(result.footballers).toEqual([{ position: 'CM' }]);
     });
   });
 });

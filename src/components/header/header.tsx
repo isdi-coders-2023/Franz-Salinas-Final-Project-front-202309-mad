@@ -12,7 +12,8 @@ export const getHeaderColorClass = (pathname: string) => {
     pathname === '/myplayers' ||
     pathname === '/login' ||
     pathname === '/register' ||
-    pathname === '/user-list'
+    pathname === '/user-list' ||
+    pathname === '/create-footballer'
   ) {
     return 'header-black';
   }
