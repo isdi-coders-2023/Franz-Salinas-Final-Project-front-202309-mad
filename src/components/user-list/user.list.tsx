@@ -31,7 +31,6 @@ export const UserList = () => {
     <>
       <div className="top-buttons-container">
         <div>
-          {' '}
           <ButtonCreateFootballer></ButtonCreateFootballer>
         </div>
         <div>

@@ -11,6 +11,8 @@ jest.mock('../../hooks/footballer.hooks', () => ({
   useFootballer: jest.fn().mockReturnValue({
     footballers: [{ name: 'nitin' }, { name: 'seragin' }],
     loadFootballer: jest.fn(),
+    footballerUpdateState: [{}],
+    footballerInitialState: [{}],
   }),
 }));
 describe('Given List component...', () => {
