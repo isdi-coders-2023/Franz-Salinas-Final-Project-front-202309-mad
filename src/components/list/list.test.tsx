@@ -3,7 +3,6 @@ import { useFootballer } from '../../hooks/footballer.hooks';
 import { store } from '../../store/store';
 import { List } from './list';
 import '@testing-library/jest-dom';
-
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
