@@ -56,11 +56,7 @@ export const useFootballer = () => {
     footballerId: Footballer['id'],
     updateFootballer: FormData
   ) => {
-    try {
-      dispacht(updateFootballerThunk({ footballerId, repo, updateFootballer }));
-    } catch (error) {
-      error as Error;
-    }
+    dispacht(updateFootballerThunk({ footballerId, repo, updateFootballer }));
   };
 
   const handleFilterFootballer = (event: SyntheticEvent) => {

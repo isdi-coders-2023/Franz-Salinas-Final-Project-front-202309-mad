@@ -4,6 +4,7 @@ import { Footballer } from '../models/footballers';
 import { render, screen } from '@testing-library/react';
 import { store } from '../store/store';
 import userEvent from '@testing-library/user-event';
+import { SyntheticEvent } from 'react';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -17,6 +18,8 @@ describe('Given useFootballer...', () => {
       handleDetailsPage,
       createFootballer,
       deleteFootballer,
+      updateFootbaler,
+      handleFilterFootballer,
     } = useFootballer();
     const footballerMock = { name: 'Serafin' } as unknown as Footballer;
     const footballerMockCreate = { name: 'Serafin' } as unknown as FormData;
@@ -27,6 +30,14 @@ describe('Given useFootballer...', () => {
         <button onClick={() => handleDetailsPage(footballerMock)}></button>
         <button onClick={() => createFootballer(footballerMockCreate)}></button>
         <button onClick={() => deleteFootballer(footballerIdMock)}></button>
+        <button
+          onClick={() =>
+            updateFootbaler(footballerIdMock, footballerMockCreate)
+          }
+        ></button>
+        <button
+          onClick={(event: SyntheticEvent) => handleFilterFootballer(event)}
+        ></button>
       </>
     );
   };
@@ -65,6 +76,18 @@ describe('Given useFootballer...', () => {
   describe('When we click the button deleteFootballer', () => {
     test('Then the dispacht should have be called...', async () => {
       await userEvent.click(elements[3]);
+      expect(useDispatch()).toHaveBeenCalled();
+    });
+  });
+  describe('When we click the button updateFootballer', () => {
+    test('Then the dispacht should have be called...', async () => {
+      await userEvent.click(elements[4]);
+      expect(useDispatch()).toHaveBeenCalled();
+    });
+  });
+  describe('When we click the button handleFilterFootballer', () => {
+    test('Then the dispacht should have be called...', async () => {
+      await userEvent.click(elements[5]);
       expect(useDispatch()).toHaveBeenCalled();
     });
   });
