@@ -34,7 +34,9 @@ export const EditFootballer = () => {
   }, [footballerUpdateState]);
 
   const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = event.target;
     setFootballer((prevState) => ({
@@ -214,11 +216,14 @@ export const EditFootballer = () => {
       </label>
       <label htmlFor="">
         Brief Story
-        <input
-          name="briefStory"
+        <textarea
+          name="info"
+          id="info"
           value={findFootballer?.briefStory}
           onChange={handleInputChange}
-        ></input>
+          cols={30}
+          rows={5}
+        ></textarea>
       </label>
       <div className="buttons-container">
         <button className="button-cancel-edit-page">

@@ -24,13 +24,14 @@ export const Login = () => {
   return (
     <>
       <div className="main-login-container">
-        <h1 className="title-login-page">Login</h1>
         {!loggedUser && (
           <form
             onSubmit={handleSubmit}
             className="login-form"
             aria-label="form"
           >
+            {' '}
+            <h1 className="title-login-page">Login</h1>
             <div className="inputs-container">
               <div className="email-input">
                 <label>
@@ -55,7 +56,6 @@ export const Login = () => {
                 </label>
               </div>
             </div>
-
             <div className="buttons-login-page">
               <button
                 type="submit"

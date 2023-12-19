@@ -1,6 +1,128 @@
 @import '../vars.scss';
 
+.title-create-footballer {
+  font-family: $mainFont;
+  font-size: 3rem;
+  color: white;
+}
+
+.main-create-footballer-page-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+
+  font-family: $mainFont;
+}
+
+.main-create-footballer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  width: 90rem;
+  height: 45rem;
+  padding-left: 2rem;
+  padding-bottom: 8rem;
+  margin-bottom: 4rem;
+
+  label {
+    padding-top: 2rem;
+    padding-right: 1rem;
+  }
+
+  .input-create-form {
+    display: flex;
+
+    .label-input-container-1 {
+      display: flex;
+    }
+
+    .label-input-container-2 {
+      display: flex;
+    }
+
+    .label-input-container-3 {
+      display: flex;
+    }
+
+    .label-input-container-4 {
+      display: flex;
+    }
+
+    .input-create-form3 {
+      display: flex;
+    }
+    .input-create-form4 {
+      display: flex;
+    }
+    .input-create-form5 {
+      display: flex;
+    }
+  }
+
+  .input-create-form-2 {
+    display: flex;
+    padding-inline-end: 2.7rem;
+    padding-block-start: 1rem;
+
+    .label-input-container-5 {
+      display: flex;
+      padding-left: 1rem;
+    }
+
+    .label-input-container-6 {
+      display: flex;
+    }
+
+    .label-input-container-7 {
+      display: flex;
+    }
+
+    .label-input-container-8 {
+      display: flex;
+    }
+  }
+
+  .input-create-form-3 {
+    display: flex;
+    /*  padding-inline-end: 2.7rem;
+      padding-block-start: 1rem; */
+
+    .label-input-container-9 {
+      display: flex;
+    }
+
+    .label-input-container-10 {
+      display: flex;
+    }
+
+    .label-input-container-11 {
+      display: flex;
+    }
+
+    .label-input-container-12 {
+      display: flex;
+    }
+  }
+}
+
 .create-form {
-  font-family: $titleFount;
+  font-family: $mainFont;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  input {
+    height: 1.8rem;
+    width: 8rem;
+    padding: 0.75rem 2rem 0rem 3rem;
+    margin: 0.5rem 2rem 0rem 0rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+  }
 }

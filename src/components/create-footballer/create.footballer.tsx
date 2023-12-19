@@ -19,107 +19,170 @@ export const CreateFootballer = () => {
 
   return (
     <>
-      {!hasCreate && (
-        <form onSubmit={handleSubmit} className="create-form" aria-label="form">
-          <label htmlFor="">
-            Name
-            <input type="text" name="name" />
-          </label>
+      <div className="main-create-footballer-page-container">
+        <div className="main-create-footballer-container">
+          <div className="create-footballer-title-container">
+            <h1 className="title-create-footballer">Create Footballer</h1>
+          </div>
 
-          <label htmlFor="">
-            Surname
-            <input type="text" name="surname" />
-          </label>
+          {!hasCreate && (
+            <form
+              onSubmit={handleSubmit}
+              className="create-form"
+              aria-label="form"
+            >
+              <div className="input-create-form">
+                <div className="label-input-container-1">
+                  <label htmlFor="">
+                    Name
+                    <input type="text" name="name" />
+                  </label>
+                </div>
+                <div className="label-input-container-2">
+                  <label htmlFor="">
+                    Surname
+                    <input type="text" name="surname" />
+                  </label>
+                </div>
+                <div className="label-input-container-3">
+                  <label htmlFor="">
+                    Age
+                    <input type="text" name="age" />
+                  </label>
+                </div>
+                <div className="label-input-container-4">
+                  <label htmlFor="">
+                    Position
+                    <input type="text" name="position" required />
+                  </label>
+                </div>
+              </div>
+              <div className="input-create-form-2">
+                <div className="label-input-container-5">
+                  <label htmlFor="">
+                    Nationality
+                    <input type="text" name="nationality" />
+                  </label>
+                </div>
+                <div className="label-input-container-6">
+                  <label htmlFor="">
+                    Prefer Foot
+                    <input type="text" name="preferFoot" />
+                  </label>
+                </div>
+                <div className="label-input-container-7">
+                  <label htmlFor="">
+                    Pace
+                    <input type="text" name="pace" />
+                  </label>
+                </div>
+                <div className="label-input-container-8">
+                  <label htmlFor="">
+                    Shoot
+                    <input type="text" name="shoot" />
+                  </label>
+                </div>
+              </div>
 
-          <label htmlFor="">
-            Age
-            <input type="text" name="age" />
-          </label>
+              <div className="input-create-form-3">
+                <div className="label-input-container-9">
+                  <label htmlFor="">
+                    Passing
+                    <input type="text" name="passing" />
+                  </label>
+                </div>
+                <div className="label-input-container-10">
+                  <label htmlFor="">
+                    Overall
+                    <input type="text" name="overall" />
+                  </label>
+                </div>
+                <div className="label-input-container-11">
+                  <label htmlFor="">
+                    Drible
+                    <input type="text" name="drible" />
+                  </label>
+                </div>
+                <div className="label-input-container-12">
+                  <label htmlFor="">
+                    Defense
+                    <input type="text" name="defense" />
+                  </label>
+                </div>
+              </div>
 
-          <label htmlFor="">
-            Position
-            <input type="text" name="position" required />
-          </label>
+              <div className="input-create-form4">
+                <div className="label-input-container-13">
+                  <label htmlFor="">
+                    Physicality
+                    <input type="text" name="physicality" />
+                  </label>
+                </div>
+                <div className="label-input-container-14">
+                  <label htmlFor="">
+                    Current Team
+                    <input type="text" name="currentTeam" />
+                  </label>
+                </div>
+                <div className="label-input-container-15">
+                  <label htmlFor="">
+                    Expected Goals
+                    <input type="text" name="expectedGoals" />
+                  </label>
+                </div>
+                <div className="label-input-container-16">
+                  <label htmlFor="">
+                    Image Card
+                    <input type="file" name="imageFootballer" required />
+                  </label>
+                </div>
+              </div>
+              <div className="input-create-form5">
+                <div className="label-input-container-17">
+                  <label htmlFor="">
+                    Details Image
+                    <input type="file" name="detailsImage" required />
+                  </label>
+                </div>
+                <div className="label-input-container-18">
+                  <label htmlFor="">
+                    Country Flag
+                    <input type="file" name="countryFlag" required />
+                  </label>
+                </div>
+                <div className="label-input-container-19">
+                  <label htmlFor="">
+                    Team Shield
+                    <input type="file" name="teamShieldFlag" required />
+                  </label>
+                </div>
+                <div className="label-input-container-20">
+                  <label htmlFor="">
+                    Brief Story
+                    <textarea
+                      name="info"
+                      id="info"
+                      cols={30}
+                      rows={5}
+                    ></textarea>
+                  </label>
+                </div>
+              </div>
 
-          <label htmlFor="">
-            Nationality
-            <input type="text" name="nationality" />
-          </label>
-
-          <label htmlFor="">
-            Prefer Foot
-            <input type="text" name="preferFoot" />
-          </label>
-
-          <label htmlFor="">
-            Pace
-            <input type="text" name="pace" />
-          </label>
-          <label htmlFor="">
-            Shoot
-            <input type="text" name="shoot" />
-          </label>
-          <label htmlFor="">
-            Passing
-            <input type="text" name="passing" />
-          </label>
-          <label htmlFor="">
-            Overall
-            <input type="text" name="overall" />
-          </label>
-          <label htmlFor="">
-            Drible
-            <input type="text" name="drible" />
-          </label>
-          <label htmlFor="">
-            Defense
-            <input type="text" name="defense" />
-          </label>
-          <label htmlFor="">
-            Physicality
-            <input type="text" name="physicality" />
-          </label>
-          <label htmlFor="">
-            Brief Story
-            <input type="text" name="briefStory" />
-          </label>
-          <label htmlFor="">
-            current Team
-            <input type="text" name="currentTeam" />
-          </label>
-
-          <label htmlFor="">
-            Image Card
-            <input type="file" name="imageFootballer" required />
-          </label>
-          <label htmlFor="">
-            Details Image
-            <input type="file" name="detailsImage" required />
-          </label>
-          <label htmlFor="">
-            Country Flag
-            <input type="file" name="countryFlag" required />
-          </label>
-          <label htmlFor="">
-            Team Shield
-            <input type="file" name="teamShieldFlag" required />
-          </label>
-
-          <button type="submit">Create</button>
-          <button type="button">Cancel</button>
-        </form>
-      )}
-
-      {hasCreate && (
-        <div>
-          <p>You have created a Footballer</p>
-          <Link to={'./myplayers'}>
-            <button type="button">Continue</button>
-          </Link>
+              <button type="submit">Create</button>
+              <button type="button">Cancel</button>
+            </form>
+          )}
         </div>
-      )}
-
-      <link rel="stylesheet" href="" />
+        {hasCreate && (
+          <div>
+            <p>You have created a Footballer</p>
+            <Link to={'./myplayers'}>
+              <button type="button">Continue</button>
+            </Link>
+          </div>
+        )}
+      </div>
     </>
   );
 };
