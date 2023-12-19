@@ -40,18 +40,31 @@
   }
 }
 
-.main-login-page-container {
-  height: 100vh;
-}
-
-@media screen and (max-width: 460px) {
+@media (max-width: 460px) {
   .main-login-container {
-    padding: 0rem 0rem 20rem 22rem;
-    width: 4rem;
-    margin-left: 3rem;
-    margin-bottom: 5rem;
     display: flex;
-    flex-direction: column;
-    margin-block-start: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 27.4rem;
+    margin-left: 0rem;
+    margin-block-start: 15rem;
+    margin-block-end: 22.4rem;
+    .title-login-page {
+      font-size: 2rem;
+    }
+  }
+
+  .login-form {
+    .inputs-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .image-login {
+    display: none;
   }
 }
