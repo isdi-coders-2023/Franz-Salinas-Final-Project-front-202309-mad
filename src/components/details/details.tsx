@@ -1,4 +1,5 @@
 import { useFootballer } from '../../hooks/footballer.hooks';
+import './details.scss';
 
 import { makeImageUrlToProperSize } from '../../services/images';
 
@@ -12,12 +13,18 @@ export const Details = () => {
 
   return (
     <>
-      <h2>{currentFootballer?.name}</h2>
       <div className="details-page-container" data-testid="details-container">
-        <img src={detailsFootballerImage!} alt="footballer-image-details" />
-        <p className="footballer-name"> {currentFootballer?.name}</p>
-        <p className=""> {currentFootballer?.nationality}</p>
-        <p className=""> {currentFootballer?.preferFoot}</p>
+        <h2>{currentFootballer?.name}</h2>
+
+        <div className="image-details-container">
+          <img src={detailsFootballerImage!} alt="footballer-image-details" />
+        </div>
+        <div className="data-container">
+          {' '}
+          <p className="footballer-name"> {currentFootballer?.name}</p>
+          <p className=""> {currentFootballer?.nationality}</p>
+          <p className=""> {currentFootballer?.preferFoot}</p>
+        </div>
       </div>
     </>
   );

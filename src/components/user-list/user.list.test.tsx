@@ -13,19 +13,20 @@ jest.mock('../../hooks/footballer.hooks', () => ({
       { name: 'nitin', author: { id: '123' } },
       { name: 'seragin', author: { id: '124' } },
     ],
-    footballerUpdateState: [{}],
+    footballerUpdateState: 'idle',
   }),
 }));
 
 jest.mock('../../hooks/user.hooks', () => ({
   useUsers: jest.fn().mockReturnValue({
-    loggedUser: { name: 'Nitin' },
+    loggedUser: { name: 'Nitin', id: '123' },
   }),
 }));
 
 describe('Given userList...', () => {
   describe('When we render de footballers carss', () => {
     beforeEach(() => {
+      /*  useFootballer().footballerUpdateState = 'loading'; */
       render(
         <BrowserRouter>
           <Provider store={store}>
@@ -43,13 +44,33 @@ describe('Given userList...', () => {
     test('the loadFootballer should have been called', () => {
       expect(useFootballer().loadFootballer).toHaveBeenCalled();
     });
-
-    /* Preguntar Nitin test('Then it should render each footballer', () => {
-      const footballers = useFootballer().footballers;
-      footballers.forEach((item) => {
-        const cardElement = screen.getByText(item.name);
-        expect(cardElement).toBeInTheDocument();
-      });
-    }); */
   });
+
+  /*  describe('Given userList', () => {
+    jest.mock('../../hooks/footballer.hooks', () => ({
+      useFootballer: jest.fn().mockReturnValue({
+        loadFootballer: jest.fn(),
+        footballers: [
+          { name: 'nitin', author: { id: '123' } },
+          { name: 'seragin', author: { id: '124' } },
+        ],
+        footballerUpdateState: 'loading',
+      }),
+    }));
+    describe('When we render it and the footballerUpdateState is loading', () => {
+      beforeEach(() => {
+        render(
+          <BrowserRouter>
+            <Provider store={store}>
+              <UserList></UserList>
+            </Provider>
+          </BrowserRouter>
+        );
+      });
+      test('Then it should show in the document the message LOADING...', () => {
+        const result = screen.getByText('LOADING');
+        expect(result).toBeInTheDocument();
+      });
+    });
+  }); */
 });

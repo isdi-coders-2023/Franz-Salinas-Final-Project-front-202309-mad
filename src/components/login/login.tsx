@@ -52,7 +52,7 @@ export const Login = () => {
           </div>
 
           <div className="buttons-login-page">
-            <button type="submit" className="login-button">
+            <button type="submit" className="login-button" data-testid="login">
               Login
             </button>
             <ButtonCancel></ButtonCancel>
@@ -62,7 +62,7 @@ export const Login = () => {
 
       {loggedUser && (
         <div>
-          <p>Successfull Login</p>
+          <p>Successfull</p>
           <Link to={'/'}>
             <button type="button">Continue</button>
           </Link>
