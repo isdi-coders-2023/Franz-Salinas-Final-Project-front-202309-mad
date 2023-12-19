@@ -21,50 +21,61 @@ export const Details = () => {
         <div className="data-container">
           <div className="data-player-name">
             {' '}
-            <p> {currentFootballer?.name}</p>
+            <p> {currentFootballer?.name} stats</p>
           </div>
-
-          <div className="data-group">
-            <p className="custom-details-writting">
-              Shoot{' '}
-              <span className="data-small-container">
-                {currentFootballer?.shoot}
-              </span>
-            </p>
-            <p className="custom-details-writting">
-              Passing{' '}
-              <span className="data-small-container">
-                {currentFootballer?.passing}
-              </span>
-            </p>
-          </div>
-          <div className="data-group">
-            <p className="custom-details-writting">
-              Pace{' '}
-              <span className="data-small-container">
-                {currentFootballer?.pace}
-              </span>
-            </p>
-            <p className="custom-details-writting">
-              Drible{' '}
-              <span className="data-small-container">
-                {currentFootballer?.drible}
-              </span>
-            </p>
-          </div>
-          <div className="data-group">
-            <p className="custom-details-writting">
-              Defense{' '}
-              <span className="data-small-container">
-                {currentFootballer?.defense}
-              </span>
-            </p>
-            <p className="custom-details-writting">
-              Phisicality{' '}
-              <span className="data-small-container">
-                {currentFootballer?.physicality}
-              </span>
-            </p>
+          <div className="main-data-group">
+            <div className="data-group">
+              <div className="p-container">
+                <p className="custom-details-writting">
+                  Shoot{' '}
+                  <span className="data-small-container">
+                    {currentFootballer?.shoot}
+                  </span>
+                </p>
+              </div>
+              <div className="p-container">
+                <p className="custom-details-writting">
+                  Passing{' '}
+                  <span className="data-small-container">
+                    {currentFootballer?.passing}
+                  </span>
+                </p>
+              </div>
+              <div className="p-container">
+                <p className="custom-details-writting">
+                  Pace{' '}
+                  <span className="data-small-container">
+                    {currentFootballer?.pace}
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="data-group2">
+              <div className="p-container">
+                <p className="custom-details-writting">
+                  Drible{' '}
+                  <span className="data-small-container">
+                    {currentFootballer?.drible}
+                  </span>
+                </p>
+              </div>
+              <div className="p-container">
+                <p className="custom-details-writting">
+                  Defense{' '}
+                  <span className="data-small-container">
+                    {currentFootballer?.defense}
+                  </span>
+                </p>
+              </div>
+              <div className="p-container">
+                <p className="custom-details-writting">
+                  Phis{' '}
+                  <span className="data-small-container">
+                    {currentFootballer?.physicality}
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
