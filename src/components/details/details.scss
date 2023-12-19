@@ -120,8 +120,9 @@
     flex-direction: column;
 
     .data-container {
-      padding-top: 0.6rem;
-      height: 40rem;
+      padding-top: 0rem;
+      padding-right: 1rem;
+      height: 35rem;
       width: 19.4rem;
 
       .main-data-group {
@@ -153,7 +154,7 @@
   .brief-story-container {
     padding: 1rem 1rem 1rem 1rem;
     .p-brief-story {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   }
 
@@ -173,8 +174,13 @@
     display: none;
   }
   .details-page-container {
-    padding-top: 3rem;
+    padding-top: 1.5rem;
     padding-left: 4rem;
     gap: 4rem;
+    height: 100vh;
+
+    .data-container {
+      width: 23.2rem;
+    }
   }
 }

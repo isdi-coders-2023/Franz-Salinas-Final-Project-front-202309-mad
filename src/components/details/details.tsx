@@ -9,7 +9,7 @@ export const Details = () => {
   const mobileDetailsFootballerImage =
     currentFootballer &&
     currentFootballer.detailsImage &&
-    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 200);
+    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 240);
 
   const detailsFootballerImage =
     currentFootballer &&
