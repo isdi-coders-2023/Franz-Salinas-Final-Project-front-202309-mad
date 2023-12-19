@@ -5,8 +5,27 @@
   height: 100vh;
   display: flex;
   padding-top: 6rem;
+  padding-left: 4rem;
   gap: 4rem;
-  .image-details-container {
+
+  main-image-container {
+    .image-details-container {
+      padding-left: 4rem;
+    }
+  }
+  .player-nation-flag {
+    padding-top: 3rem;
+    padding-left: 3rem;
+  }
+
+  .player-team-shield {
+    padding-top: 3rem;
+    padding-right: 3rem;
+  }
+
+  .images-bottom {
+    display: flex;
+    justify-content: space-between;
   }
   .data-container {
     display: flex;
@@ -15,8 +34,13 @@
     gap: 2rem;
     background-color: rgb(11, 9, 9);
     width: 55rem;
-    height: 40rem;
+    height: 50rem;
     padding-top: 3rem;
+
+    .data-player-name {
+      font-style: normal;
+    }
+
     .main-data-group {
       display: flex;
       flex-direction: column;
@@ -47,6 +71,21 @@
   }
 }
 
+.brief-story-container {
+  .brief-story-title {
+    font-family: $mainFont;
+    font-size: 2rem;
+    font-style: normal;
+    color: white;
+  }
+
+  padding: 1rem 2rem 1rem 2rem;
+  .p-brief-story {
+    font-size: 1.5rem;
+    font-style: normal;
+  }
+}
+
 .data-player-name {
   display: flex;
 }
@@ -59,7 +98,83 @@
 }
 
 .data-small-container {
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
   background-color: rgb(69, 178, 0);
 }
-/*  */
+
+.image-details-container-mobile {
+  display: none;
+}
+
+.player-nation-flag-mobile {
+  display: none;
+}
+
+.player-team-shield-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 460px) {
+  .details-page-container {
+    display: flex;
+    flex-direction: column;
+
+    .data-container {
+      padding-top: 0.6rem;
+      height: 40rem;
+      width: 19.4rem;
+
+      .main-data-group {
+        width: 18rem;
+
+        gap: 1.5rem;
+
+        .data-group {
+          padding-left: 1.6rem;
+        }
+        .data-group2 {
+          padding-left: 1.6rem;
+        }
+      }
+    }
+
+    .custom-details-writting {
+      font-size: 0.8rem;
+      font-style: normal;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+    }
+
+    .brief-story-title {
+      font-size: 0.9rem;
+    }
+  }
+
+  .brief-story-container {
+    padding: 1rem 1rem 1rem 1rem;
+    .p-brief-story {
+      font-size: 0.9rem;
+    }
+  }
+
+  .image-details-container {
+    display: none;
+  }
+
+  .image-details-container-mobile {
+    display: contents;
+  }
+
+  .player-nation-flag {
+    display: none;
+  }
+
+  .player-team-shield {
+    display: none;
+  }
+  .details-page-container {
+    padding-top: 3rem;
+    padding-left: 4rem;
+    gap: 4rem;
+  }
+}
