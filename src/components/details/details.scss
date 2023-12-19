@@ -1,6 +1,43 @@
+@import '../vars.scss';
+
 .details-page-container {
   background-color: black;
   height: 100vh;
   display: flex;
   padding-top: 6rem;
+  gap: 4rem;
 }
+
+.data-container {
+  display: flex;
+  gap: 2rem;
+  background-color: rgb(11, 9, 9);
+  width: 55rem;
+  height: 40rem;
+  padding-top: 3rem;
+}
+
+.data-player-name {
+  display: flex;
+}
+.data-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0rem 0rem 0rem 3rem;
+
+  /* Ajusta el ancho según tu preferencia */
+}
+
+.custom-details-writting {
+  font-size: 1.7rem;
+  font-style: normal;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.data-small-container {
+  border-radius: 0.4rem;
+  background-color: rgb(69, 178, 0);
+}
+/*  */
