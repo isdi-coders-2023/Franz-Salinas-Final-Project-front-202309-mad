@@ -43,3 +43,59 @@
 .football-field {
   padding-block: 5rem;
 }
+.card-footballer-container-mobile {
+  display: none;
+}
+
+@media (max-width: 460px) {
+  .card-footballer-container {
+    display: none;
+  }
+
+  .top-image-container {
+    display: none;
+  }
+
+  .main-top-home-page-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+
+    .main-message {
+      font-size: 1.9rem;
+      margin-left: 0rem;
+    }
+    .welcome-message-container {
+      margin-top: 2rem;
+      margin-left: 0rem;
+      margin-right: 0rem;
+      width: 20rem;
+      height: 16rem;
+
+      .lower-message {
+        font-size: 1.5rem;
+        margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+      }
+    }
+  }
+
+  .image-formation-container {
+    display: none;
+  }
+
+  .card-footballer-container-mobile {
+    display: contents;
+
+    padding-bottom: 4rem;
+  }
+  .main-botton-home-page-container {
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+}

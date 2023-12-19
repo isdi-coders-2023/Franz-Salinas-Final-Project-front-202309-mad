@@ -30,6 +30,13 @@ export const HomePage = () => {
             alt="card-footballer"
           />
         </div>
+
+        <div className="card-footballer-container-mobile">
+          <img
+            src="https://res.cloudinary.com/dnlkezvzv/image/upload/h_400/v1701973640/proyecto%20final/gm4wrmhxfqvwtzmjmhrb.webp"
+            alt="card-footballer"
+          />
+        </div>
       </div>
     </div>
   );
