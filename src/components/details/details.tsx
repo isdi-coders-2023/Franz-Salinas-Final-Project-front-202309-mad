@@ -69,7 +69,10 @@ export const Details = () => {
         <div className="data-container">
           <div className="data-player-name">
             {' '}
-            <p> {currentFootballer?.name} stats</p>
+            <p className="p-data-player-name">
+              {' '}
+              {currentFootballer?.name} stats
+            </p>
           </div>
           <div className="main-data-group">
             <div className="data-group">

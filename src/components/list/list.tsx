@@ -22,7 +22,7 @@ export const List = () => {
 
   return (
     <>
-      <h1>My Players</h1>
+      <h1 className="my-players-title">My Players</h1>
 
       {
         <ul className="footballers-list">

@@ -118,12 +118,22 @@
   .details-page-container {
     display: flex;
     flex-direction: column;
+    padding-top: 1.5rem;
+    padding-left: 2.8rem;
+    gap: 4rem;
+    height: 100vh;
 
     .data-container {
       padding-top: 0rem;
       padding-right: 1rem;
       height: 35rem;
-      width: 19.4rem;
+      width: 23.2rem;
+
+      .data-player-name {
+        .p-data-player-name {
+          font-size: 1.3rem;
+        }
+      }
 
       .main-data-group {
         width: 18rem;
@@ -137,50 +147,40 @@
           padding-left: 1.6rem;
         }
       }
+
+      .custom-details-writting {
+        font-size: 1.2rem;
+        font-style: normal;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+      }
+
+      .brief-story-title {
+        font-size: 1.2rem;
+      }
     }
 
-    .custom-details-writting {
-      font-size: 0.8rem;
-      font-style: normal;
-      margin-top: 0rem;
-      margin-bottom: 0rem;
+    .brief-story-container {
+      padding: 1rem 1rem 1rem 1rem;
+      .p-brief-story {
+        font-size: 1.1rem;
+      }
     }
 
-    .brief-story-title {
-      font-size: 0.9rem;
+    .image-details-container {
+      display: none;
     }
-  }
 
-  .brief-story-container {
-    padding: 1rem 1rem 1rem 1rem;
-    .p-brief-story {
-      font-size: 1rem;
+    .image-details-container-mobile {
+      display: contents;
     }
-  }
 
-  .image-details-container {
-    display: none;
-  }
+    .player-nation-flag {
+      display: none;
+    }
 
-  .image-details-container-mobile {
-    display: contents;
-  }
-
-  .player-nation-flag {
-    display: none;
-  }
-
-  .player-team-shield {
-    display: none;
-  }
-  .details-page-container {
-    padding-top: 1.5rem;
-    padding-left: 4rem;
-    gap: 4rem;
-    height: 100vh;
-
-    .data-container {
-      width: 23.2rem;
+    .player-team-shield {
+      display: none;
     }
   }
 }
