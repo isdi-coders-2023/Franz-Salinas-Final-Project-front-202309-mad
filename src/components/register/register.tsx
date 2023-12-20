@@ -1,11 +1,12 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import { useUsers } from '../../hooks/user.hooks';
 import './register.scss';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 export const Register = () => {
   const [hasRegister, setRegister] = useState(false);
   const { register } = useUsers();
+  const navigate = useNavigate();
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -14,6 +15,21 @@ export const Register = () => {
     register(formData);
     setRegister(true);
   };
+
+  useEffect(() => {
+    if (hasRegister) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Congrass you are register with us!',
+        showConfirmButton: false,
+        timer: 1500,
+        width: 350,
+      }).then(() => {
+        setRegister(false);
+        navigate('/login/');
+      });
+    }
+  });
 
   return (
     <>
@@ -52,7 +68,7 @@ export const Register = () => {
 
               <label htmlFor="">
                 Password
-                <input type="text" name="password" required />
+                <input type="password" name="password" required />
               </label>
 
               <label htmlFor="">
