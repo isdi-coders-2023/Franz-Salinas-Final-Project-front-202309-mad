@@ -114,6 +114,19 @@
   display: none;
 }
 
+.button-back-details {
+  font-size: 1.2rem;
+  font-style: normal;
+  border-radius: 1rem;
+  width: 6rem;
+  padding: 0.3rem;
+  color: #fff;
+  background-color: rgba(24, 156, 78, 1);
+  text-align: center;
+  margin-top: 2rem;
+  margin-inline-end: 149rem;
+}
+
 @media screen and (max-width: 460px) {
   .details-page-container {
     display: flex;
@@ -121,13 +134,13 @@
     padding-top: 1.5rem;
     padding-left: 2.8rem;
     gap: 4rem;
-    height: 120vh;
+    height: 124vh;
 
     .data-container {
       padding-top: 0rem;
       padding-right: 1rem;
       margin-left: 1rem;
-      height: 35rem;
+      height: 40rem;
       width: 18.5rem;
 
       .data-player-name {
@@ -184,5 +197,11 @@
     .player-team-shield {
       display: none;
     }
+  }
+
+  .button-back-details {
+    margin-top: 0rem;
+
+    margin-inline-end: 0rem;
   }
 }

@@ -2,6 +2,7 @@ import { useFootballer } from '../../hooks/footballer.hooks';
 import './details.scss';
 
 import { makeImageUrlToProperSize } from '../../services/images';
+import { Link } from 'react-router-dom';
 
 export const Details = () => {
   const { currentFootballer } = useFootballer();
@@ -118,6 +119,15 @@ export const Details = () => {
             <p className="p-brief-story">
               {currentFootballer?.briefStory}
             </p>{' '}
+          </div>
+          <div className="button-back-details-container">
+            <Link
+              to={'/user-list'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              {' '}
+              <button className="button-back-details">Back</button>
+            </Link>
           </div>
         </div>
       </div>

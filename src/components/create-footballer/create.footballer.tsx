@@ -136,7 +136,12 @@ export const CreateFootballer = () => {
 
             <label htmlFor="">
               Brief Story
-              <textarea name="info" id="info" cols={25} rows={5}></textarea>
+              <textarea
+                name="briefStory"
+                id="info"
+                cols={25}
+                rows={5}
+              ></textarea>
             </label>
 
             <div className="create-footballerr-buttons-container">
@@ -161,14 +166,6 @@ export const CreateFootballer = () => {
           </form>
         )}
       </div>
-      {hasCreate && (
-        <div>
-          <p>You have created a Footballer</p>
-          <Link to={'./myplayers'}>
-            <button type="button">Continue</button>
-          </Link>
-        </div>
-      )}
     </div>
   );
 };

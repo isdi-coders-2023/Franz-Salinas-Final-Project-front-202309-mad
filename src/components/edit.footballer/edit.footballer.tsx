@@ -238,14 +238,14 @@ export const EditFootballer = () => {
             Details Image
             <input type="file" name="detailsImage" />
           </label>
-          <label htmlFor="">
+          <label htmlFor="info">
             Brief Story
             <textarea
-              name="info"
+              name="briefStory"
               id="info"
               value={findFootballer?.briefStory}
               onChange={handleInputChange}
-              cols={25}
+              cols={30}
               rows={5}
             ></textarea>
           </label>

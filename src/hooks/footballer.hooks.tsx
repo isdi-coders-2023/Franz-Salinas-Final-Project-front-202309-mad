@@ -38,6 +38,7 @@ export const useFootballer = () => {
     } else {
       dispacht(filterFootballerThunk({ repo, query: selectedValue }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [repo, selectedValue]);
 
   const handleDetailsPage = async (footballer: Footballer) => {
