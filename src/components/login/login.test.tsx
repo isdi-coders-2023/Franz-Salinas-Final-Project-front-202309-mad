@@ -10,6 +10,7 @@ import { MemoryRouter as Router } from 'react-router-dom';
 jest.mock('../../hooks/user.hooks', () => ({
   useUsers: jest.fn().mockReturnValue({
     login: jest.fn(),
+    loggedUser: { name: 'Juan' },
   }),
 }));
 

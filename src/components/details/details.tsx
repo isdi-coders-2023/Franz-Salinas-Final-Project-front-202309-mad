@@ -9,7 +9,7 @@ export const Details = () => {
   const mobileDetailsFootballerImage =
     currentFootballer &&
     currentFootballer.detailsImage &&
-    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 240);
+    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 220);
 
   const detailsFootballerImage =
     currentFootballer &&
@@ -25,16 +25,6 @@ export const Details = () => {
     currentFootballer &&
     currentFootballer.teamShieldFlag &&
     makeImageUrlToProperSize(currentFootballer?.teamShieldFlag.publicId, 120);
-
-  const mobileFootballerCountryFlag =
-    currentFootballer &&
-    currentFootballer.countryFlag &&
-    makeImageUrlToProperSize(currentFootballer?.countryFlag.publicId, 30);
-
-  const mobileFootballerTeamShield =
-    currentFootballer &&
-    currentFootballer.teamShieldFlag &&
-    makeImageUrlToProperSize(currentFootballer?.teamShieldFlag.publicId, 30);
 
   return (
     <>
@@ -54,14 +44,9 @@ export const Details = () => {
             <div className="player-nation-flag">
               <img src={footballerCountryFlag!} alt="" />
             </div>
-            <div className="player-nation-flag-mobile">
-              <img src={mobileFootballerCountryFlag!} alt="" />
-            </div>
+
             <div className="player-team-shield">
               <img src={footballerTeamShield!} alt="" />
-            </div>
-            <div className="player-team-shield-mobile">
-              <img src={mobileFootballerTeamShield!} alt="" />
             </div>
           </div>
         </div>

@@ -5,3 +5,9 @@
 .user-list-container {
   height: 180vh;
 }
+
+@media (max-width: 460px) {
+  .user-list-container {
+    height: 500vh;
+  }
+}

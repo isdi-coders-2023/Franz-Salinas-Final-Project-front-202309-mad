@@ -40,50 +40,40 @@ export const Login = () => {
   return (
     <>
       <div className="main-login-container">
-        {!loggedUser && (
-          <form
-            onSubmit={handleSubmit}
-            className="login-form"
-            aria-label="form"
-          >
-            {' '}
-            <h1 className="title-login-page">Login</h1>
-            <div className="inputs-container">
-              <div className="email-input">
-                <label>
-                  Email
-                  <input
-                    type="text"
-                    name="email"
-                    className="input-login"
-                    required
-                  />
-                </label>
-              </div>
-              <div className="password-input">
-                <label>
-                  Password
-                  <input
-                    type="password"
-                    name="password"
-                    className="input-login"
-                    required
-                  />
-                </label>
-              </div>
+        <form onSubmit={handleSubmit} className="login-form" aria-label="form">
+          {' '}
+          <h1 className="title-login-page">Login</h1>
+          <div className="inputs-container">
+            <div className="email-input">
+              <label>
+                Email
+                <input
+                  type="text"
+                  name="email"
+                  className="input-login"
+                  required
+                />
+              </label>
             </div>
-            <div className="buttons-login-page">
-              <button
-                type="submit"
-                className="login-button"
-                data-testid="login"
-              >
-                Login
-              </button>
-              <ButtonCancel></ButtonCancel>
+            <div className="password-input">
+              <label>
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  className="input-login"
+                  required
+                />
+              </label>
             </div>
-          </form>
-        )}
+          </div>
+          <div className="buttons-login-page">
+            <button type="submit" className="login-button" data-testid="login">
+              Login
+            </button>
+            <ButtonCancel></ButtonCancel>
+          </div>
+        </form>
       </div>
 
       <div className="image-login">
