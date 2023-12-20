@@ -1,7 +1,8 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import './create.footballer.scss';
 import { useFootballer } from '../../hooks/footballer.hooks';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export const CreateFootballer = () => {
   const [hasCreate, setCreate] = useState(false);
@@ -14,8 +15,22 @@ export const CreateFootballer = () => {
     const formData = new FormData(formElement);
     createFootballer(formData);
     setCreate(true);
-    navigate('/myplayers');
   };
+
+  useEffect(() => {
+    if (hasCreate) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Congrats you have created a footballer card!',
+        showConfirmButton: false,
+        timer: 3000,
+        width: 350,
+      }).then(() => {
+        setCreate(false);
+        navigate('/myplayers');
+      });
+    }
+  });
 
   return (
     <div className="main-create-footballer-page-container">

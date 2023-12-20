@@ -1,14 +1,16 @@
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, useEffect } from 'react';
 import { useUsers } from '../../hooks/user.hooks';
 import './login.scss';
 
 import { LoginUser } from '../../models/users';
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ButtonCancel } from '../button-cancel/button.cancel';
+import Swal from 'sweetalert2';
 
 export const Login = () => {
   const { login, loggedUser } = useUsers();
+  const navigate = useNavigate();
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -20,6 +22,20 @@ export const Login = () => {
     };
     login(loginUser);
   };
+
+  useEffect(() => {
+    if (loggedUser) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Successfull login',
+        showConfirmButton: false,
+        timer: 2000,
+        width: 350,
+      }).then(() => {
+        navigate('/user-list');
+      });
+    }
+  });
 
   return (
     <>
@@ -67,15 +83,6 @@ export const Login = () => {
               <ButtonCancel></ButtonCancel>
             </div>
           </form>
-        )}
-
-        {loggedUser && (
-          <div>
-            <p>Successfull</p>
-            <Link to={'/'}>
-              <button type="button">Continue</button>
-            </Link>
-          </div>
         )}
       </div>
 
