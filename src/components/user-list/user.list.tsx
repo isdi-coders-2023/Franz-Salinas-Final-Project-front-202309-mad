@@ -29,7 +29,7 @@ export const UserList = () => {
   );
 
   return (
-    <>
+    <div className="user-list-container">
       <div className="top-buttons-container">
         <div>
           <ButtonCreateFootballer></ButtonCreateFootballer>
@@ -45,6 +45,6 @@ export const UserList = () => {
           <Card key={item.id} info={item}></Card>
         ))}
       </ul>
-    </>
+    </div>
   );
 };

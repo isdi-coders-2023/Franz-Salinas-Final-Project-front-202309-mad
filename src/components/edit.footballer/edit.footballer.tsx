@@ -55,7 +55,7 @@ export const EditFootballer = () => {
   return (
     <div className="main-edit-footballer-page-container">
       <div className="edit-footballer-title-container">
-        <h1></h1>
+        <h1 className="title-edit-footballer"> Edit Footballer</h1>
       </div>
       <div className="main-edit-footballer-container">
         <form
