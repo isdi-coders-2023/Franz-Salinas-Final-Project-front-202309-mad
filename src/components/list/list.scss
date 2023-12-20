@@ -1,5 +1,13 @@
+@import '../vars.scss';
+
 .my-players-title {
-  display: none;
+  font-family: $mainFont;
+  font-style: italic;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
 }
 
 @media screen and (min-width: 750px) {

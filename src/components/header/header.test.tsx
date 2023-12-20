@@ -64,6 +64,13 @@ describe('Given Header component...', () => {
     expect(headerClassRegister).toBe('header-black');
   });
 });
+
+test('When pathname is/create-footballer, Then Header class should be header-black', () => {
+  const pathnameRegister = '/details/:id';
+  const headerClassRegister = getHeaderColorClass(pathnameRegister);
+  expect(headerClassRegister).toBe('header-black');
+});
+
 describe('When the user is logged', () => {
   beforeEach(() => {
     render(

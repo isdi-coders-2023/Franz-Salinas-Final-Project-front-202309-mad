@@ -119,6 +119,7 @@ export const Card = ({ info }: Props) => {
             </div>
             <div className="player-picture">
               <img
+                className="player-picture-img"
                 role="button"
                 src={footballerImage}
                 alt="footballer-card"

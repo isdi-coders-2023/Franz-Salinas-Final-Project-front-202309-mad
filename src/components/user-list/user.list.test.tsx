@@ -26,7 +26,6 @@ jest.mock('../../hooks/user.hooks', () => ({
 describe('Given userList...', () => {
   describe('When we render de footballers carss', () => {
     beforeEach(() => {
-      /*  useFootballer().footballerUpdateState = 'loading'; */
       render(
         <BrowserRouter>
           <Provider store={store}>
@@ -45,32 +44,4 @@ describe('Given userList...', () => {
       expect(useFootballer().loadFootballer).toHaveBeenCalled();
     });
   });
-
-  /*  describe('Given userList', () => {
-    jest.mock('../../hooks/footballer.hooks', () => ({
-      useFootballer: jest.fn().mockReturnValue({
-        loadFootballer: jest.fn(),
-        footballers: [
-          { name: 'nitin', author: { id: '123' } },
-          { name: 'seragin', author: { id: '124' } },
-        ],
-        footballerUpdateState: 'loading',
-      }),
-    }));
-    describe('When we render it and the footballerUpdateState is loading', () => {
-      beforeEach(() => {
-        render(
-          <BrowserRouter>
-            <Provider store={store}>
-              <UserList></UserList>
-            </Provider>
-          </BrowserRouter>
-        );
-      });
-      test('Then it should show in the document the message LOADING...', () => {
-        const result = screen.getByText('LOADING');
-        expect(result).toBeInTheDocument();
-      });
-    });
-  }); */
 });
