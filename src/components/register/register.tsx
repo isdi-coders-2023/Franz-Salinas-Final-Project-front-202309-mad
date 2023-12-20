@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { useUsers } from '../../hooks/user.hooks';
 import './register.scss';
+import { Link } from 'react-router-dom';
 
 export const Register = () => {
   const [hasRegister, setRegister] = useState(false);
@@ -77,9 +78,11 @@ export const Register = () => {
                 </div>
                 <div className="register-cancel-button-container">
                   {' '}
-                  <button className="button-user-cancel" type="button">
-                    Cancel
-                  </button>
+                  <Link to={'/'} style={{ textDecoration: 'none' }}>
+                    <button className="button-user-cancel" type="button">
+                      Cancel
+                    </button>
+                  </Link>
                 </div>
               </div>
             </form>
