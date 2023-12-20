@@ -53,192 +53,198 @@ export const EditFootballer = () => {
     navigate('/myplayers');
   };
   return (
-    <form
-      onSubmit={handleUpdate}
-      className="edit-form"
-      aria-label="form"
-      data-testid="form-id"
-    >
-      <label>
-        Name
-        <input
-          type="text"
-          value={findFootballer?.name}
-          name="name"
-          placeholder="Nombre"
-          className="input-edit"
-          onChange={handleInputChange}
-          required
-        />
-      </label>
-
-      <label>
-        Position
-        <input
-          type="position"
-          value={findFootballer?.position}
-          name="position"
-          onChange={handleInputChange}
-          required
-        />
-      </label>
-      <label htmlFor="">
-        Nationality
-        <input
-          type="text"
-          value={findFootballer?.nationality}
-          name="nationality"
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <label htmlFor="">
-        Age
-        <input
-          type="text"
-          name="age"
-          value={findFootballer?.age}
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <label htmlFor="">
-        Surname
-        <input
-          type="text"
-          name="surname"
-          value={findFootballer?.surname}
-          onChange={handleInputChange}
-          required
-        />
-      </label>
-
-      <label htmlFor="">
-        PreferFoot
-        <input
-          type="text"
-          name="preferFoot"
-          value={findFootballer?.preferFoot}
-          onChange={handleInputChange}
-          required
-        />
-      </label>
-
-      <label htmlFor="">
-        Pace
-        <input
-          type="text"
-          name="pace"
-          value={findFootballer?.pace}
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <label htmlFor="">
-        Shoot
-        <input
-          type="text"
-          name="shoot"
-          value={findFootballer?.shoot}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Passing
-        <input
-          type="text"
-          name="passing"
-          value={findFootballer?.passing}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Overall
-        <input
-          type="text"
-          name="overall"
-          value={findFootballer?.overall}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Drible
-        <input
-          type="text"
-          name="drible"
-          value={findFootballer?.drible}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Defense
-        <input
-          type="text"
-          name="defense"
-          value={findFootballer?.defense}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Physicality
-        <input
-          type="text"
-          name="physicality"
-          value={findFootballer?.physicality}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Current Team
-        <input
-          type="text"
-          name="currentTeam"
-          value={findFootballer?.currentTeam}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label htmlFor="">
-        Image Footballer Card
-        <input type="file" name="imageFootballer" />
-      </label>
-      <label htmlFor="">
-        Country Flag
-        <input type="file" name="countryFlag" />
-      </label>
-      <label htmlFor="">
-        Team Shield
-        <input type="file" name="teamShieldFlag" />
-      </label>
-
-      <label htmlFor="">
-        Details Image
-        <input type="file" name="detailsImage" />
-      </label>
-      <label htmlFor="">
-        Brief Story
-        <textarea
-          name="info"
-          id="info"
-          value={findFootballer?.briefStory}
-          onChange={handleInputChange}
-          cols={30}
-          rows={5}
-        ></textarea>
-      </label>
-      <div className="buttons-container">
-        <button className="button-cancel-edit-page">
-          <Link
-            to={'/myplayers'}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            Cancel
-          </Link>
-        </button>
-
-        <button type="submit" className="edit-send">
-          Send
-        </button>
+    <div className="main-edit-footballer-page-container">
+      <div className="edit-footballer-title-container">
+        <h1></h1>
       </div>
-    </form>
+      <div className="main-edit-footballer-container">
+        <form
+          onSubmit={handleUpdate}
+          className="edit-form"
+          aria-label="form"
+          data-testid="form-id"
+        >
+          <label>
+            Name
+            <input
+              type="text"
+              value={findFootballer?.name}
+              name="name"
+              placeholder="Nombre"
+              className="input-edit"
+              onChange={handleInputChange}
+              required
+            />
+          </label>
+
+          <label>
+            Position
+            <input
+              type="position"
+              value={findFootballer?.position}
+              name="position"
+              onChange={handleInputChange}
+              required
+            />
+          </label>
+          <label htmlFor="">
+            Nationality
+            <input
+              type="text"
+              value={findFootballer?.nationality}
+              name="nationality"
+              onChange={handleInputChange}
+            />
+          </label>
+
+          <label htmlFor="">
+            Age
+            <input
+              type="text"
+              name="age"
+              value={findFootballer?.age}
+              onChange={handleInputChange}
+            />
+          </label>
+
+          <label htmlFor="">
+            Surname
+            <input
+              type="text"
+              name="surname"
+              value={findFootballer?.surname}
+              onChange={handleInputChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="">
+            PreferFoot
+            <input
+              type="text"
+              name="preferFoot"
+              value={findFootballer?.preferFoot}
+              onChange={handleInputChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="">
+            Pace
+            <input
+              type="text"
+              name="pace"
+              value={findFootballer?.pace}
+              onChange={handleInputChange}
+            />
+          </label>
+
+          <label htmlFor="">
+            Shoot
+            <input
+              type="text"
+              name="shoot"
+              value={findFootballer?.shoot}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Passing
+            <input
+              type="text"
+              name="passing"
+              value={findFootballer?.passing}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Overall
+            <input
+              type="text"
+              name="overall"
+              value={findFootballer?.overall}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Drible
+            <input
+              type="text"
+              name="drible"
+              value={findFootballer?.drible}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Defense
+            <input
+              type="text"
+              name="defense"
+              value={findFootballer?.defense}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Physicality
+            <input
+              type="text"
+              name="physicality"
+              value={findFootballer?.physicality}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Current Team
+            <input
+              type="text"
+              name="currentTeam"
+              value={findFootballer?.currentTeam}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label htmlFor="">
+            Image Footballer Card
+            <input type="file" name="imageFootballer" />
+          </label>
+          <label htmlFor="">
+            Country Flag
+            <input type="file" name="countryFlag" />
+          </label>
+          <label htmlFor="">
+            Team Shield
+            <input type="file" name="teamShieldFlag" />
+          </label>
+
+          <label htmlFor="">
+            Details Image
+            <input type="file" name="detailsImage" />
+          </label>
+          <label htmlFor="">
+            Brief Story
+            <textarea
+              name="info"
+              id="info"
+              value={findFootballer?.briefStory}
+              onChange={handleInputChange}
+              cols={25}
+              rows={5}
+            ></textarea>
+          </label>
+          <div className="buttons-container">
+            <button type="submit" className="edit-send">
+              Send
+            </button>
+            <button className="button-cancel-edit-page">
+              <Link
+                to={'/myplayers'}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                Cancel
+              </Link>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };

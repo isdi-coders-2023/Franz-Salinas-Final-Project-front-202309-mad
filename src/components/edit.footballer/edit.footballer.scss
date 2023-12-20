@@ -1,19 +1,60 @@
 @import '../vars.scss';
 
+.main-edit-footballer-page-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180vh;
+
+  font-family: $mainFont;
+}
+
+.main-edit-footballer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  width: 18rem;
+  height: 100rem;
+  padding-left: 2rem;
+  padding-bottom: 20rem;
+  margin-bottom: 4rem;
+
+  label {
+    padding-top: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .edit-form {
   font-family: $mainFont;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%;
+  input {
+    height: 1.8rem;
+    width: 15rem;
+    padding: 0.75rem 2rem 0rem 3rem;
+    margin: 0.5rem 2rem 0rem 0rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+  }
+
+  textarea {
+    padding: 0.75rem 1rem 1rem 0rem;
+  }
 }
 
 .edit-send {
-  font-size: 1.5rem;
-  font-style: italic;
+  font-size: 1.2rem;
+  font-style: normal;
   border-radius: 1rem;
-  width: 7rem;
+  width: 6rem;
   padding: 0.3rem;
   color: #fff;
   background-color: rgba(24, 156, 78, 1);
@@ -22,14 +63,16 @@
 
 .buttons-container {
   display: flex;
-  justify-content: space-between;
+  gap: 3rem;
+  padding-top: 3rem;
+  padding-right: 2rem;
 }
 
 .button-cancel-edit-page {
-  font-size: 1.5rem;
-  font-style: italic;
+  font-size: 1.2rem;
+  font-style: normal;
   border-radius: 1rem;
-  width: 7rem;
+  width: 6rem;
   padding: 0.3rem;
   color: #fff;
   background-color: rgba(24, 156, 78, 1);
