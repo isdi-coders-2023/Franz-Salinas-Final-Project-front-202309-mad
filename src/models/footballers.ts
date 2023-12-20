@@ -1,3 +1,4 @@
+import { ImgData } from './img.data';
 import { User } from './users';
 
 export type Footballer = {
@@ -6,9 +7,10 @@ export type Footballer = {
   position: string;
   nationality: string;
   age: string;
-  author: User;
   surname: string;
   preferFoot: string;
+  author: User;
+
   pace: string;
   shoot: string;
   passing: string;
@@ -17,4 +19,9 @@ export type Footballer = {
   defense: string;
   physicality: string;
   briefStory: string;
+  imageFootballer: ImgData;
+  countryFlag: ImgData;
+  teamShieldFlag: ImgData;
+  currentTeam: string;
+  detailsImage: ImgData;
 };

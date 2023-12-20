@@ -1,3 +1,4 @@
+import { Footballer } from '../models/footballers';
 import { LoginUser, User } from '../models/users';
 import { FootballerRepo } from './footballer.repo';
 
@@ -12,7 +13,16 @@ describe('Given Class FootballerRepo ...', () => {
         json: jestMock,
       });
     });
-    const repo = new FootballerRepo();
+    const mockToken = '';
+    const repo = new FootballerRepo(mockToken);
+
+    test('Then the getFootballers should be used...', async () => {
+      const footballerMock: Footballer[] = [];
+
+      const result = await repo.getFootballers();
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual(footballerMock);
+    });
 
     test('Then the getUsers should be used...', async () => {
       const userMock: User[] = [];
@@ -39,38 +49,80 @@ describe('Given Class FootballerRepo ...', () => {
       expect(jestMock).toHaveBeenCalled();
       expect(result).toStrictEqual([]);
     });
+
+    test('Then the createFootballer should be used...', async () => {
+      const result = await repo.createFootballer({} as FormData);
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual([]);
+    });
+
+    test('Then the updateFootballer should be used...', async () => {
+      const result = await repo.updateFootballer('1' as string, {} as FormData);
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual([]);
+    });
+
+    test('Then the filterFootballer should be used...', async () => {
+      const result = await repo.filterFootballer('1' as string);
+      expect(jestMock).toHaveBeenCalled();
+      expect(result).toStrictEqual([]);
+    });
+  });
+});
+
+describe('When we instantiate and the response is not ok', () => {
+  const errorStatus = 404;
+  const errorStatusText = 'Not Found';
+
+  beforeEach(() => {
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: errorStatus,
+      statusText: errorStatusText,
+    });
+  });
+  const repo = new FootballerRepo('');
+
+  test('Then the getUsers should throw an error...', async () => {
+    await expect(repo.getUsers()).rejects.toThrow();
   });
 
-  describe('When we instantiate and the response is ok', () => {
-    const errorStatus = 404;
-    const errorStatusText = 'Not Found';
+  test('Then the getFootballers should throw an error...', async () => {
+    await expect(repo.getFootballers()).rejects.toThrow();
+  });
 
-    beforeEach(() => {
-      global.fetch = jest.fn().mockResolvedValue({
-        ok: false,
-        status: errorStatus,
-        statusText: errorStatusText,
-      });
-    });
-    const repo = new FootballerRepo();
+  test('Then the registerUser should throw an error...', async () => {
+    await expect(
+      repo.registerUser([] as unknown as FormData)
+    ).rejects.toThrow();
+  });
 
-    test('Then the getUsers should throw an error...', async () => {
-      await expect(repo.getUsers()).rejects.toThrow();
-    });
-    test('Then the registerUser should throw an error...', async () => {
-      await expect(
-        repo.registerUser([] as unknown as FormData)
-      ).rejects.toThrow();
-    });
-    test('Then the loginUser should throw an error...', async () => {
-      await expect(
-        repo.loginUser([] as unknown as LoginUser)
-      ).rejects.toThrow();
-    });
-    test('Then the loginUser should throw an error...', async () => {
-      await expect(
-        repo.loginUserWithToken('' as unknown as string)
-      ).rejects.toThrow();
-    });
+  test('Then the createFootballer should throw an error...', async () => {
+    await expect(
+      repo.createFootballer([] as unknown as FormData)
+    ).rejects.toThrow();
+  });
+  test('Then the updateFootballer should throw an error...', async () => {
+    await expect(
+      repo.updateFootballer('1' as string, [] as unknown as FormData)
+    ).rejects.toThrow();
+  });
+  test('Then the updateFootballer should throw an error...', async () => {
+    await expect(repo.filterFootballer('1' as string)).rejects.toThrow();
+  });
+
+  test('Then the deleteFootballer should throw an error...', async () => {
+    await expect(
+      repo.deleteFootballer([] as unknown as Footballer['id'])
+    ).rejects.toThrow();
+  });
+
+  test('Then the loginUser should throw an error...', async () => {
+    await expect(repo.loginUser([] as unknown as LoginUser)).rejects.toThrow();
+  });
+  test('Then the loginUser should throw an error...', async () => {
+    await expect(
+      repo.loginUserWithToken('' as unknown as string)
+    ).rejects.toThrow();
   });
 });

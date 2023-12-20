@@ -1,5 +1,13 @@
 @import '../vars.scss';
 
+.header-grey {
+  background-color: $headerBackGroundOne;
+}
+
+.header-black {
+  background-color: black;
+}
+
 header {
   font-family: $titleFount;
   font-size: 2rem;
@@ -9,17 +17,24 @@ header {
   background-color: $headerBackGroundOne;
 }
 
+p {
+  font-family: $titleFount;
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 200;
+  color: #fff;
+}
+
 .header-main-container {
   display: flex;
   margin-inline: 3.5rem;
-  background-color: $headerBackGroundOne;
+
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
 }
 
 .icons-container {
-  font-size: 2rem;
   display: flex;
   justify-content: flex-end; /* Alinea los elementos a la derecha */
   gap: 4rem; /* Espaciado entre elementos */
@@ -36,4 +51,45 @@ header {
 .logged-user-name {
   margin: 0rem 0rem 0rem 0rem;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 460px) {
+  header {
+    font-size: 0.7rem;
+    height: 5.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .header-main-container {
+    padding: 0rem 0rem 0rem 0rem;
+    margin-right: 2rem;
+    margin-left: 0.4rem;
+  }
+
+  .icons-container {
+    gap: 1.5rem; /* Espaciado entre elementos */
+  }
+
+  .logged-user-name {
+    margin: 0rem 0rem 0rem 0rem;
+    font-size: 0.9rem;
+  }
+
+  .image-user-logged {
+    margin-top: 0.3rem;
+  }
+
+  .button-create-footballer {
+    font-family: $titleFount;
+    font-size: 0.9rem;
+    width: 8rem;
+    margin-left: 1rem;
+  }
+
+  .image-user-logged {
+    margin: 1rem -2.6rem 0rem 0rem;
+  }
 }

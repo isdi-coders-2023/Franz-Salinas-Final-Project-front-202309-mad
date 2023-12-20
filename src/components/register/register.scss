@@ -1,13 +1,90 @@
 @import '../vars.scss';
 
+.main-register-container-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.title-register {
+  font-family: $mainFont;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.main-register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+
+  label {
+    padding-left: 2rem;
+  }
+}
 .register-form {
   font-family: $mainFont;
   color: #fff;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  input {
+    height: 2rem;
+    width: 18rem;
+    padding: 0.75rem 2rem;
+    margin: 0.5rem 2rem 0rem 0rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+  }
 }
 
-.title-register {
-  font-family: $mainFont;
+.register-buttons-container {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.button-user-register {
+  font-size: 1.5rem;
+  font-style: italic;
+  border-radius: 1rem;
+  width: 7rem;
+  padding: 0.3rem;
   color: #fff;
+  background-color: rgba(24, 156, 78, 1);
+  text-align: center;
+}
+
+.button-user-cancel {
+  font-size: 1.5rem;
+  font-style: italic;
+  border-radius: 1rem;
+  width: 7rem;
+  padding: 0.3rem;
+  color: #fff;
+  background-color: rgba(24, 156, 78, 1);
+  text-align: center;
+}
+
+@media (max-width: 460px) {
+  .main-register-container {
+    margin: 3rem 1rem 0rem 1rem;
+
+    .register-form {
+      input {
+        height: 2rem;
+        width: 16rem;
+        padding: 0.75rem 1.25rem;
+        margin: 0.5rem 0.8rem;
+        display: inline-block;
+        border-radius: 0.5rem;
+      }
+    }
+  }
 }

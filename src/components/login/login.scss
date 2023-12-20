@@ -30,3 +30,22 @@
   margin-top: 3rem;
   gap: 14rem;
 }
+
+@media (max-width: 460px) {
+  .input-login {
+    width: 10rem;
+    padding: 0.3rem;
+  }
+
+  .buttons-login-page {
+    display: flex;
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+
+  .login-form {
+    font-family: $mainFont;
+    color: #fff;
+    display: flex;
+  }
+}

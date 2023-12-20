@@ -1,10 +1,20 @@
 @import '../vars.scss';
 
 .main-login-container {
-  width: 100%;
+  background-color: black;
+  width: 20rem;
   padding: 0rem 34rem 10rem 34rem;
+  border-radius: 0.8rem;
+  margin-left: 30rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 2rem;
 }
-
+/* .title-login-container {
+  display: flex;
+  justify-content: center;
+} */
 .image-login {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
@@ -15,9 +25,46 @@
   font-size: 4rem;
   font-family: $mainFont;
   color: #fff;
-  text-align: center;
 }
 
 .login-section {
   background-color: $headerBackGroundOne;
+}
+
+.login-form {
+  .inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .main-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 27.4rem;
+    margin-left: 0rem;
+    margin-block-start: 15rem;
+    margin-block-end: 22.4rem;
+    .title-login-page {
+      font-size: 2rem;
+    }
+  }
+
+  .login-form {
+    .inputs-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .image-login {
+    display: none;
+  }
 }

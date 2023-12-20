@@ -1,0 +1,88 @@
+@import '../vars.scss';
+
+.title-create-footballer {
+  font-family: $mainFont;
+  font-size: 3rem;
+  color: white;
+}
+
+.main-create-footballer-page-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200vh;
+
+  font-family: $mainFont;
+}
+
+.main-create-footballer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  width: 18rem;
+  height: 100rem;
+  padding-left: 2rem;
+  padding-bottom: 20rem;
+  margin-bottom: 4rem;
+
+  label {
+    padding-top: 1rem;
+    padding-right: 1rem;
+  }
+
+  .create-form {
+    font-family: $mainFont;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    input {
+      height: 1.8rem;
+      width: 15rem;
+      padding: 0.75rem 2rem 0rem 3rem;
+      margin: 0.5rem 2rem 0rem 0rem;
+      display: inline-block;
+      border-radius: 0.5rem;
+    }
+
+    textarea {
+      padding: 0.75rem 1rem 1rem 0rem;
+    }
+  }
+
+  .create-footballerr-buttons-container {
+    display: flex;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-right: 2rem;
+
+    .create-footballer-button-container {
+      .create-footballer-button {
+        font-size: 1.2rem;
+        font-style: normal;
+        border-radius: 1rem;
+        width: 6rem;
+        padding: 0.3rem;
+        color: #fff;
+        background-color: rgba(24, 156, 78, 1);
+        text-align: center;
+      }
+    }
+  }
+}
+
+.create-footballer-cancel-button {
+  font-size: 1.2rem;
+  font-style: normal;
+  border-radius: 1rem;
+  width: 6rem;
+  padding: 0.3rem;
+  color: #fff;
+  background-color: rgba(24, 156, 78, 1);
+  text-align: center;
+}

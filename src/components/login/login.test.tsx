@@ -29,7 +29,7 @@ describe('Given Login component...', () => {
       const form = screen.getByRole('form');
       const input = screen.getAllByRole('textbox');
       await userEvent.type(input[0], 'nitin@gmail.com');
-      await userEvent.click(screen.getByText('Login'));
+      await userEvent.click(screen.getByTestId('login'));
       await fireEvent.submit(form);
       expect(useUsers().login).toHaveBeenCalled();
     });
