@@ -12,6 +12,9 @@ jest.mock('../../hooks/footballer.hooks', () => ({
   }),
 }));
 
+jest.mock('sweetalert2', () => ({
+  fire: jest.fn().mockResolvedValue({}),
+}));
 describe('Given the CreateFootballer component...', () => {
   beforeEach(() => {
     render(

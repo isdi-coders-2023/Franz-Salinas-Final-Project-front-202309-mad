@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import './edit.footballer.scss';
 import { useFootballer } from '../../hooks/footballer.hooks';
 import { SyntheticEvent, useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export const EditFootballer = () => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ export const EditFootballer = () => {
   );
 
   const [findFootballer, setFootballer] = useState(findedFootballer);
+  const [updatedFootballer, setUpdatedFootballer] = useState(false);
 
   useEffect(() => {
     if (findFootballer) {
@@ -49,9 +51,26 @@ export const EditFootballer = () => {
     event.preventDefault();
     const element = event.target as HTMLFormElement;
     const formData = new FormData(element);
+
     updateFootbaler(findFootballer!.id, formData);
-    navigate('/myplayers');
+    setUpdatedFootballer(true);
   };
+
+  useEffect(() => {
+    if (updatedFootballer) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Congrats your have edit a footballer card!',
+        showConfirmButton: false,
+        timer: 3000,
+        width: 350,
+      }).then(() => {
+        setUpdatedFootballer(false);
+        navigate('/myplayers');
+      });
+    }
+  });
+
   return (
     <div className="main-edit-footballer-page-container">
       <div className="edit-footballer-title-container">
