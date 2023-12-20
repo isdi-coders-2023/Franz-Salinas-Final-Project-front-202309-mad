@@ -10,6 +10,7 @@
 .title-register {
   font-family: $mainFont;
   font-size: 3rem;
+  color: #fff;
 }
 
 .main-register-container {
@@ -49,11 +50,6 @@
   margin-bottom: 3rem;
 }
 
-.title-register {
-  font-family: $mainFont;
-  color: #fff;
-}
-
 .button-user-register {
   font-size: 1.5rem;
   font-style: italic;
@@ -81,8 +77,6 @@
     margin: 3rem 1rem 0rem 1rem;
 
     .register-form {
-      label {
-      }
       input {
         height: 2rem;
         width: 16rem;
