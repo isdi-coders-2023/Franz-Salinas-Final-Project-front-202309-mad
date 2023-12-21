@@ -23,11 +23,12 @@ $black-gradient-to-top: linear-gradient(
   height: 5rem;
   color: white;
 }
-// fut-player-card
+
 .fut-player-card {
+  transition: transform 0.1s ease;
   font-family: $titleFount;
   font-style: italic;
-  margin-top: 7rem;
+  margin-top: 4rem;
   position: relative;
   width: 21rem;
   height: 30.313rem;
@@ -38,6 +39,12 @@ $black-gradient-to-top: linear-gradient(
   padding: 3.8rem 0;
   z-index: 2;
   transition: 200ms ease-in;
+
+  &:hover {
+    transform: scale(
+      1.1
+    ); /* Cambia el valor para ajustar el nivel de agrandamiento */
+  }
   .player-card-top {
     position: relative;
     display: flex;
@@ -60,113 +67,94 @@ $black-gradient-to-top: linear-gradient(
       .player-overall {
         font-size: 1.4rem;
       }
-
-      /* .player-nation {
-        display: block;
-        width: 2rem;
-        height: 25px;
-        margin: 0.3rem 0;
-        img {
-          object-fit: contain;
-        }
-      }
-      .player-club {
-        display: block;
-        width: 2.1rem;
-        height: 40px;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-      } */
     }
+
     .player-picture {
       width: 12.5rem;
       height: 12.5rem;
       margin: 0 auto;
       overflow: hidden;
-      img {
-        object-fit: contain;
-        position: relative;
-        right: -1.5rem;
-        bottom: 0;
-      }
-      .player-extra {
-        position: absolute;
-        right: 0;
-        bottom: -0.5rem;
-        overflow: hidden;
-        font-size: 1rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        width: 100%;
-        height: 2rem;
-        padding: 0 1.5rem;
-        text-align: right;
-        background: none;
-        span {
-          margin-left: 0.6rem;
-          text-shadow: 2px 2px #333;
-        }
+    }
+    img {
+      object-fit: contain;
+      position: relative;
+      right: -1.5rem;
+      bottom: 0;
+    }
+    .player-extra {
+      position: absolute;
+      right: 0;
+      bottom: -0.5rem;
+      overflow: hidden;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      width: 100%;
+      height: 2rem;
+      padding: 0 1.5rem;
+      text-align: right;
+      background: none;
+      span {
+        margin-left: 0.6rem;
+        text-shadow: 2px 2px #333;
       }
     }
   }
-  .player-card-bottom {
+}
+.player-card-bottom {
+  position: relative;
+  .player-info {
+    display: block;
+    padding: 0.3rem 0;
+    color: $gold;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
     position: relative;
-    .player-info {
+    z-index: 2;
+    .player-name {
+      width: 100%;
       display: block;
-      padding: 0.3rem 0;
-      color: $gold;
-      width: 90%;
-      margin: 0 auto;
-      height: auto;
-      position: relative;
-      z-index: 2;
-      .player-name {
-        width: 100%;
+      text-align: center;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid rgba($gold, 0.1);
+      padding-bottom: 0.3rem;
+      overflow: hidden;
+      span {
         display: block;
-        text-align: center;
-        font-size: 1.6rem;
-        text-transform: uppercase;
-        border-bottom: 2px solid rgba($gold, 0.1);
-        padding-bottom: 0.3rem;
-        overflow: hidden;
-        span {
-          display: block;
-          text-shadow: 2px 2px #111;
-        }
+        text-shadow: 2px 2px #111;
       }
-      .player-features {
-        margin: 0.5rem auto;
-        display: flex;
-        justify-content: center;
-        .player-features-col {
-          border-right: 2px solid rgba($gold, 0.1);
-          padding: 0 2.3rem;
-          span {
-            display: flex;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            .player-feature-value {
-              margin-right: 0.3rem;
-              font-weight: 700;
-            }
-            .player-feature-title {
-              font-weight: 300;
-            }
+    }
+    .player-features {
+      margin: 0.5rem auto;
+      display: flex;
+      justify-content: center;
+      .player-features-col {
+        border-right: 2px solid rgba($gold, 0.1);
+        padding: 0 2.3rem;
+        span {
+          display: flex;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          .player-feature-value {
+            margin-right: 0.3rem;
+            font-weight: 700;
+          }
+          .player-feature-title {
+            font-weight: 300;
           }
         }
-        .player-features-col:last-child {
-          border: 0;
-        }
+      }
+      .player-features-col:last-child {
+        border: 0;
       }
     }
   }
 }
 
 .button-edit {
-  background: rgba(45, 42, 42, 1);
+  background: rgb(24, 156, 78);
   width: 1.5rem;
   border-radius: 0.7rem;
   color: black;
@@ -184,7 +172,7 @@ $black-gradient-to-top: linear-gradient(
 }
 
 .button-details {
-  background: rgba(45, 42, 42, 1);
+  background: rgb(24, 156, 78);
   width: 1.5rem;
   border-radius: 0.7rem;
   color: black;
@@ -202,7 +190,7 @@ $black-gradient-to-top: linear-gradient(
 }
 
 .button-delete {
-  background: rgba(45, 42, 42, 1);
+  background: rgb(24, 156, 78);
   width: 1.5rem;
   border-radius: 0.7rem;
   color: black;
@@ -217,8 +205,15 @@ $black-gradient-to-top: linear-gradient(
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .player-picture-mobile {
   display: none;
+}
+
+@media (max-width: 460px) {
+  .fut-player-card {
+    margin-top: 0rem;
+  }
 }

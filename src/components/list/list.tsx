@@ -8,7 +8,7 @@ export const List = () => {
   const {
     loadFootballer,
     footballers,
-    footballerInitialState,
+
     footballerUpdateState,
   } = useFootballer();
 
@@ -16,14 +16,8 @@ export const List = () => {
     loadFootballer();
   }, [loadFootballer, footballerUpdateState]);
 
-  if (footballerInitialState === 'loading') {
-    return <p>LOADING</p>;
-  }
-
   return (
     <>
-      <h1 className="my-players-title">My Players</h1>
-
       {
         <ul className="footballers-list">
           {footballers.map((item: Footballer) => (

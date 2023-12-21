@@ -11,6 +11,8 @@ jest.mock('../../hooks/footballer.hooks', () => ({
       name: 'Nitin',
       nationality: 'Argentinian',
       detailsImage: { publicId: '123' },
+      countryFlag: { publicId: '12333' },
+      teamShieldFlag: { publicId: '122444' },
     },
   }),
 }));

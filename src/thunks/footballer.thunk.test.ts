@@ -70,6 +70,19 @@ describe('Given loadFootballersThunks ...', () => {
       expect(data.repo.filterFootballer).toHaveBeenCalled();
     });
 
+    test('Then the filterFootballers should have been called with an value ...', async () => {
+      const query = 'CM' as unknown as string;
+      const createData = { ...mockRepo } as { repo: FootballerRepo };
+
+      await store.dispatch(
+        filterFootballerThunk({
+          repo: createData.repo,
+          query,
+        })
+      );
+      expect(data.repo.filterFootballer).toHaveBeenCalled();
+    });
+
     test('Then the updateFootballers should have been called...', async () => {
       const updateFootballer = {} as FormData;
       const createData = { ...mockRepo } as { repo: FootballerRepo };

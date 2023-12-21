@@ -60,9 +60,11 @@ export const Card = ({ info }: Props) => {
         <div className="fut-player-card">
           <div className="player-card-top">
             <div className="player-master-info">
+              <div className="player-rating">{info.overall}</div>
               <div className="player-position">
                 <span className="span-player-position">{info.position}</span>
               </div>
+
               <div className="player-nation">
                 <img
                   src={footballerFlag}
@@ -77,9 +79,7 @@ export const Card = ({ info }: Props) => {
                   draggable="false"
                 />
               </div>
-              <div className="player-rating">
-                <span></span>
-              </div>
+
               {loggedUser && (
                 <Link
                   to={'/edit/' + info.id}
@@ -119,6 +119,7 @@ export const Card = ({ info }: Props) => {
             </div>
             <div className="player-picture">
               <img
+                className="player-picture-img"
                 role="button"
                 src={footballerImage}
                 alt="footballer-card"

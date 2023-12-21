@@ -1,7 +1,29 @@
+@import '../vars.scss';
+
 .my-team-title {
   display: none;
 }
 
 .user-list-container {
   height: 180vh;
+}
+
+.user-list-title {
+  font-family: $mainFont;
+  font-style: italic;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
+
+@media (max-width: 460px) {
+  .user-list-container {
+    height: 500vh;
+  }
+
+  .user-list-title {
+    margin-top: 1rem;
+  }
 }

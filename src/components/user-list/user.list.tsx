@@ -19,10 +19,6 @@ export const UserList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadFootballer, footballerUpdateState]);
 
-  if (footballerUpdateState === 'loading') {
-    return <p>LOADING</p>;
-  }
-
   // Filtrar los futbolistas del usuario logeado
   const userFootballers = footballers.filter(
     (item: Footballer) => item.author.id === loggedUser!.id // Ajusta esto según la estructura de tu objeto de usuario y los futbolistas
@@ -30,6 +26,8 @@ export const UserList = () => {
 
   return (
     <div className="user-list-container">
+      <h1 className="user-list-title">My Dream Team</h1>
+
       <div className="top-buttons-container">
         <div>
           <ButtonCreateFootballer></ButtonCreateFootballer>

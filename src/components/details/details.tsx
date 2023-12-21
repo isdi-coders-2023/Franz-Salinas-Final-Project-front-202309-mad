@@ -2,6 +2,7 @@ import { useFootballer } from '../../hooks/footballer.hooks';
 import './details.scss';
 
 import { makeImageUrlToProperSize } from '../../services/images';
+import { Link } from 'react-router-dom';
 
 export const Details = () => {
   const { currentFootballer } = useFootballer();
@@ -9,7 +10,7 @@ export const Details = () => {
   const mobileDetailsFootballerImage =
     currentFootballer &&
     currentFootballer.detailsImage &&
-    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 240);
+    makeImageUrlToProperSize(currentFootballer?.detailsImage.publicId, 220);
 
   const detailsFootballerImage =
     currentFootballer &&
@@ -25,16 +26,6 @@ export const Details = () => {
     currentFootballer &&
     currentFootballer.teamShieldFlag &&
     makeImageUrlToProperSize(currentFootballer?.teamShieldFlag.publicId, 120);
-
-  const mobileFootballerCountryFlag =
-    currentFootballer &&
-    currentFootballer.countryFlag &&
-    makeImageUrlToProperSize(currentFootballer?.countryFlag.publicId, 30);
-
-  const mobileFootballerTeamShield =
-    currentFootballer &&
-    currentFootballer.teamShieldFlag &&
-    makeImageUrlToProperSize(currentFootballer?.teamShieldFlag.publicId, 30);
 
   return (
     <>
@@ -54,14 +45,9 @@ export const Details = () => {
             <div className="player-nation-flag">
               <img src={footballerCountryFlag!} alt="" />
             </div>
-            <div className="player-nation-flag-mobile">
-              <img src={mobileFootballerCountryFlag!} alt="" />
-            </div>
+
             <div className="player-team-shield">
               <img src={footballerTeamShield!} alt="" />
-            </div>
-            <div className="player-team-shield-mobile">
-              <img src={mobileFootballerTeamShield!} alt="" />
             </div>
           </div>
         </div>
@@ -133,6 +119,15 @@ export const Details = () => {
             <p className="p-brief-story">
               {currentFootballer?.briefStory}
             </p>{' '}
+          </div>
+          <div className="button-back-details-container">
+            <Link
+              to={'/user-list'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              {' '}
+              <button className="button-back-details">Back</button>
+            </Link>
           </div>
         </div>
       </div>

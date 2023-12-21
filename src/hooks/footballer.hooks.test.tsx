@@ -2,14 +2,28 @@ import { Provider, useDispatch } from 'react-redux';
 import { useFootballer } from './footballer.hooks';
 import { Footballer } from '../models/footballers';
 import { render, screen } from '@testing-library/react';
-import { store } from '../store/store';
+import { RootState, store } from '../store/store';
 import userEvent from '@testing-library/user-event';
-import { SyntheticEvent } from 'react';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn().mockReturnValue(jest.fn()),
+  useSelector: jest
+    .fn()
+    .mockReturnValue((state: RootState) => state.footballerState)
+    .mockReturnValue({
+      selectedValue: '',
+    }),
 }));
+
+const footballerMock = {} as unknown as Footballer;
+const footballerMockCreate = { name: 'Serafin' } as unknown as FormData;
+const footballerIdMock = '';
+
+const mockEvent = {
+  preventDefault: jest.fn(),
+  target: { value: 'test' },
+} as unknown as React.SyntheticEvent;
 
 describe('Given useFootballer...', () => {
   const TestComponent = () => {
@@ -21,9 +35,7 @@ describe('Given useFootballer...', () => {
       updateFootbaler,
       handleFilterFootballer,
     } = useFootballer();
-    const footballerMock = { name: 'Serafin' } as unknown as Footballer;
-    const footballerMockCreate = { name: 'Serafin' } as unknown as FormData;
-    const footballerIdMock = { id: '1' } as unknown as Footballer['id'];
+
     return (
       <>
         <button onClick={() => loadFootballer()}></button>
@@ -35,9 +47,7 @@ describe('Given useFootballer...', () => {
             updateFootbaler(footballerIdMock, footballerMockCreate)
           }
         ></button>
-        <button
-          onClick={(event: SyntheticEvent) => handleFilterFootballer(event)}
-        ></button>
+        <button onClick={() => handleFilterFootballer(mockEvent)}></button>
       </>
     );
   };
@@ -90,5 +100,31 @@ describe('Given useFootballer...', () => {
       await userEvent.click(elements[5]);
       expect(useDispatch()).toHaveBeenCalled();
     });
+  });
+});
+
+describe('Given loadFootballer', () => {
+  jest.mock('react-redux', () => ({
+    ...jest.requireActual('react-redux'),
+    useDispatch: jest.fn().mockReturnValue(jest.fn()),
+    useSelector: jest
+      .fn()
+      .mockReturnValue((state: RootState) => state.footballerState)
+      .mockReturnValue({
+        selectedValue: 'test',
+      }),
+  }));
+  const TestComponent = () => {
+    const { loadFootballer } = useFootballer();
+    return <button onClick={() => loadFootballer()}></button>;
+  };
+  let elementss: HTMLElement[];
+  beforeEach(() => {
+    render(<TestComponent></TestComponent>);
+    elementss = screen.getAllByRole('button');
+  });
+  test('Then the dispatch should have been called with filterFootballerThunk', async () => {
+    await userEvent.click(elementss[0]);
+    expect(useDispatch).toHaveBeenCalled();
   });
 });
