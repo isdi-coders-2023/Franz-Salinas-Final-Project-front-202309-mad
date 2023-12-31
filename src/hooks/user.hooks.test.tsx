@@ -5,7 +5,7 @@ import { userEvent } from '@testing-library/user-event';
 import { Provider, useDispatch } from 'react-redux';
 import { store } from '../store/store';
 import { FootballerRepo } from '../services/footballer.repo';
-import { StorageData } from '../services/store.data';
+import { LocalStorage } from '../services/store.data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -56,7 +56,7 @@ describe('Given useUsers hooks', () => {
 
   describe('When we click button loginWithToken', () => {
     test('Then the dispacht should have been called', async () => {
-      StorageData.prototype.get = jest.fn().mockReturnValue('test');
+      LocalStorage.prototype.get = jest.fn().mockReturnValue('test');
 
       await userEvent.click(elements[2]);
       expect(useDispatch()).toHaveBeenCalled();

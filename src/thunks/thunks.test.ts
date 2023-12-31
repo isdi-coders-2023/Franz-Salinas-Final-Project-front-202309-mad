@@ -1,6 +1,6 @@
 import { LoginUser } from '../models/users';
 import { FootballerRepo } from '../services/footballer.repo';
-import { StorageData } from '../services/store.data';
+import { LocalStorage } from '../services/store.data';
 import { store } from '../store/store';
 import { logginUserThunk, logginWithTokenThunk } from './thunks';
 
@@ -13,7 +13,7 @@ describe('Given thunks methods...', () => {
       } as unknown as FootballerRepo,
       storageData: {
         set: jest.fn(),
-      } as unknown as StorageData<{ token: string }>,
+      } as unknown as LocalStorage<{ token: string }>,
     };
 
     test('Then it should be called the loginUser and set  ...', async () => {

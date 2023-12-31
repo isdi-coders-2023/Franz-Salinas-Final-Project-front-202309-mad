@@ -104,9 +104,8 @@ export class FootballerRepo {
     const loginWithTokenUrl = this.userUrl + '/login';
     const response = await fetch(loginWithTokenUrl, {
       method: 'PATCH',
-      body: JSON.stringify(token),
       headers: {
-        Authorizarion: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
     if (!response.ok)

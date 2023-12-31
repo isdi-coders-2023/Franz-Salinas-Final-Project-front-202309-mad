@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { LoginResponse } from '../models/login.response';
-import { StorageData } from '../services/store.data';
+import { LocalStorage } from '../services/store.data';
 import { FootballerRepo } from '../services/footballer.repo';
 import { LoginUser } from '../models/users';
 
@@ -9,7 +9,7 @@ export const logginUserThunk = createAsyncThunk<
   {
     loginUser: LoginUser;
     repo: FootballerRepo;
-    storageData: StorageData<{ token: string }>;
+    storageData: LocalStorage<{ token: string }>;
   }
 >('login', async ({ loginUser, repo, storageData }) => {
   const loginResponse = await repo.loginUser(loginUser);
@@ -22,7 +22,7 @@ export const logginWithTokenThunk = createAsyncThunk<
   {
     token: string;
     repo: FootballerRepo;
-    storageData: StorageData<{ token: string }>;
+    storageData: LocalStorage<{ token: string }>;
   }
 >('loginUserWithToken', async ({ token, repo, storageData }) => {
   const loginResponse = await repo.loginUserWithToken(token);

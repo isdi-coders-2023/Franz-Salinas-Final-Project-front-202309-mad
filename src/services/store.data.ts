@@ -1,4 +1,4 @@
-export class StorageData<T> {
+export class LocalStorage<T> {
   constructor(private storeName: string) {}
   get() {
     const initialData = localStorage.getItem(this.storeName);
