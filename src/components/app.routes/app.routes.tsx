@@ -12,6 +12,7 @@ const CreateFootballerPage = lazy(
 );
 const EditFootballer = lazy(() => import('../pages/edit.footballer.page'));
 const MyTeam = lazy(() => import('../pages/my.team.tsx'));
+const TeamFormation = lazy(() => import('../pages/team.formation.page.tsx'));
 export const AppRoutes = () => {
   return (
     <main>
@@ -31,6 +32,10 @@ export const AppRoutes = () => {
             element={<EditFootballer></EditFootballer>}
           ></Route>
           <Route path="/user-list" element={<MyTeam></MyTeam>}></Route>
+          <Route
+            path="/team-formation"
+            element={<TeamFormation></TeamFormation>}
+          ></Route>
         </Routes>
       </Suspense>
     </main>

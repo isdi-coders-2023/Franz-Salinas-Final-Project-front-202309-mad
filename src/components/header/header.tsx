@@ -5,23 +5,24 @@ import { makeImageUrlToProperSize } from '../../services/images';
 import { useUsers } from '../../hooks/user.hooks';
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const getHeaderColorClass = (pathname: string) => {
-  if (pathname === '/') {
-    return 'header-grey';
-  } else if (
-    pathname === '/myplayers' ||
-    pathname === '/login' ||
-    pathname === '/register' ||
-    pathname === '/user-list' ||
-    pathname === '/create-footballer' ||
-    pathname === '/details/:id'
-  ) {
-    return 'header-black';
-  }
-};
 
 export const Header = () => {
   const location = useLocation();
+
+  const getHeaderColorClass = (pathname: string) => {
+    if (pathname === '/') {
+      return 'header-grey';
+    } else if (
+      pathname === '/myplayers' ||
+      pathname === '/login' ||
+      pathname === '/register' ||
+      pathname === '/user-list' ||
+      pathname === '/create-footballer' ||
+      pathname === '/details/:id'
+    ) {
+      return 'header-black';
+    }
+  };
 
   const headerClasses = `header ${getHeaderColorClass(
     location.pathname

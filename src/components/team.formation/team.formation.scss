@@ -1,0 +1,29 @@
+.main-team-formation-container {
+  background-color: black;
+  height: 130vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-image-container {
+  transform: rotate(90deg); /* Aplica una rotación de 90 grados */
+}
+
+.field-players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem; /* Ajusta el espaciado según sea necesario */
+  transform: rotate(-90deg);
+}
+
+.defenders,
+.midfielders,
+.forwards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem; /* Ajusta el espaciado entre líneas según sea necesario */
+}
